@@ -21,6 +21,22 @@
       </tags>
   </entry>
   <entry>
+    <title>少年</title>
+    <url>/archives/b452d568.html</url>
+    <content><![CDATA[<p>我还记得第一次看到你的场景，那时的我并没想到现在你对我是那么重要。</p>
+<a id="more"></a>
+<p>要记住每一个对你好的人，因为他们本可以不这么做的。 </p>
+<p>好好努力，争取在2021年的时候买一辆车。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200414121547865.jpg" alt="少年"></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>sql注入bybass云锁</title>
     <url>/archives/71a77bb5.html</url>
     <content><![CDATA[<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>云锁官网<br><a href="https://www.yunsuo.com.cn/" target="_blank" rel="noopener">https://www.yunsuo.com.cn/</a><br>下载的是公有云版本 云锁服务器端Windows版本</p>
@@ -51,22 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title>少年</title>
-    <url>/archives/b452d568.html</url>
-    <content><![CDATA[<p>我还记得第一次看到你的场景，那时的我并没想到现在你对我是那么重要。</p>
-<a id="more"></a>
-<p>要记住每一个对你好的人，因为他们本可以不这么做的。 </p>
-<p>好好努力，争取在2021年的时候买一辆车。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200414121547865.jpg" alt="少年"></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通达oa文件上传+文件包含远程代码执行漏洞</title>
     <url>/archives/de0d7bed.html</url>
     <content><![CDATA[<h2 id="漏洞说明"><a href="#漏洞说明" class="headerlink" title="漏洞说明"></a>漏洞说明</h2><p>通达OA是一套办公系统.近日通达OA官方在其官方论坛披露了近期一起通达OA用户服务器遭受勒索病毒攻击事件并发布了多个版本的漏洞补丁.漏洞类型为任意文件上传,受影响的版本存在文件包含漏洞. 未授权的远程攻击者可以通过精心构造的请求包进行文件包含并触发远程代码执行.</p>
@@ -89,7 +89,7 @@
       </tags>
   </entry>
   <entry>
-    <title>http协议知多少</title>
+    <title>http协议</title>
     <url>/archives/4c2f67f.html</url>
     <content><![CDATA[<h1 id="http简介"><a href="#http简介" class="headerlink" title="http简介"></a>http简介</h1><p>HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。。</p>
 <h1 id="http工作原理"><a href="#http工作原理" class="headerlink" title="http工作原理"></a>http工作原理</h1><p>HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。</p>
