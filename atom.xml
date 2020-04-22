@@ -6,7 +6,7 @@
   <link href="/php00py.github.io/atom.xml" rel="self"/>
   
   <link href="https://rqlyy.top/php00py.github.io/"/>
-  <updated>2020-04-14T07:57:36.796Z</updated>
+  <updated>2020-04-22T02:34:10.737Z</updated>
   <id>https://rqlyy.top/php00py.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Centos 6.9上搭建L2tp客户端以及SSR</title>
+    <link href="https://rqlyy.top/php00py.github.io/archives/f767b259.html"/>
+    <id>https://rqlyy.top/php00py.github.io/archives/f767b259.html</id>
+    <published>2020-04-22T01:49:33.000Z</published>
+    <updated>2020-04-22T02:34:10.737Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>由于疫情时期，只能在家远程办公。l2tp客户端的vpn一直连不上。所有想用自己的公网服务器去连接VPN，然后本地物理机再通过ssr连接到服务器。这样就可以实现连接VPN访问了</p><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>Centos6.9 + L2tp客户端+ ssr</p><h2 id="安装xl2tp以及ppp"><a href="#安装xl2tp以及ppp" class="headerlink" title="安装xl2tp以及ppp"></a>安装xl2tp以及ppp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rpm -ivh http:&#x2F;&#x2F;mirrors.yun-idc.com&#x2F;epel&#x2F;6&#x2F;x86_64&#x2F;epel-release-6-8.noarch.rpm</span><br><span class="line"></span><br><span class="line">yum install xl2tpd -y</span><br><span class="line"></span><br><span class="line">yum install ppp -y</span><br></pre></td></tr></table></figure><h2 id="配置-etc-xl2tpd-xl2tpd-conf"><a href="#配置-etc-xl2tpd-xl2tpd-conf" class="headerlink" title="配置/etc/xl2tpd/xl2tpd.conf"></a>配置/etc/xl2tpd/xl2tpd.conf</h2><p>在xl2tpd.conf配置文件下添加如下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[lac l2tpvpn]</span><br><span class="line">name &#x3D; tianyiyun     #名字随便命名</span><br><span class="line">lns &#x3D; xx.xx.xx.xx    #lns服务器</span><br><span class="line">pppoptfile &#x3D; &#x2F;etc&#x2F;ppp&#x2F;peers&#x2F;vpn.l2tpd  #拨号配置文件</span><br><span class="line">ppp debug&#x3D;yes</span><br></pre></td></tr></table></figure><h2 id="拨号配置文件设置"><a href="#拨号配置文件设置" class="headerlink" title="拨号配置文件设置"></a>拨号配置文件设置</h2><p>vim /etc/ppp/peers/vpn.l2tpd</p><p>填写下面信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">remotename l2tpvpn</span><br><span class="line"></span><br><span class="line">user &quot;xxx&quot;  #用户名，填写自己连接VPN的用户名</span><br><span class="line"></span><br><span class="line">password &quot;123xx&quot;   #密码，填写自己连接VPN的密码</span><br><span class="line"></span><br><span class="line">unit 0</span><br><span class="line"></span><br><span class="line">lock</span><br><span class="line"></span><br><span class="line">nodeflate</span><br><span class="line"></span><br><span class="line">nobsdcomp</span><br><span class="line"></span><br><span class="line">noauth</span><br><span class="line"></span><br><span class="line">persist</span><br><span class="line"></span><br><span class="line">nopcomp</span><br><span class="line"></span><br><span class="line">noaccomp</span><br><span class="line"></span><br><span class="line">maxfail 5</span><br><span class="line"></span><br><span class="line">debug</span><br></pre></td></tr></table></figure><h2 id="启动xl2tpd"><a href="#启动xl2tpd" class="headerlink" title="启动xl2tpd"></a>启动xl2tpd</h2><p>/etc/init.d/xl2tpd start<br>他会自动去寻找拨号的配置文件，即/etc/ppp/peers/vpn.l2tpd</p><h2 id="连接VPN"><a href="#连接VPN" class="headerlink" title="连接VPN"></a>连接VPN</h2><p>echo ‘c l2tpvpn’ &gt; /var/run/xl2tpd/l2tp-control</p><h2 id="断开VPN"><a href="#断开VPN" class="headerlink" title="断开VPN"></a>断开VPN</h2><p>echo ‘d l2tpvpn’ &gt; /var/run/xl2tpd/l2tp-control</p><h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p>tail -f /var/log/messages</p><h2 id="查看是否连接成功"><a href="#查看是否连接成功" class="headerlink" title="查看是否连接成功"></a>查看是否连接成功</h2><p>ifconfig命令，连接成功后可以看到有一个ppp0</p><p><img src="https://img-blog.csdnimg.cn/20200422101713219.png" alt=""></p><h1 id="安装ssr"><a href="#安装ssr" class="headerlink" title="安装ssr"></a>安装ssr</h1><p>执行安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -n --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;91yun&#x2F;SS_install&#x2F;master&#x2F;ssr-install.sh &amp;&amp; bash ssr-install.sh</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200422102116168.png" alt="在这里插入图片描述"></p><p>根据提示一步一步一步安装即可</p><p><img src="https://img-blog.csdnimg.cn/20200422102543487.png" alt="在这里插入图片描述"></p><p>在物理机上使用ssr客户端连接即可</p>]]></content>
+    
+    <summary type="html">
+    
+      Centos 6.9上搭建L2tp客户端以及SSR
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://rqlyy.top/php00py.github.io/categories/linux/"/>
+    
+    
+      <category term="L2tp" scheme="https://rqlyy.top/php00py.github.io/tags/L2tp/"/>
+    
+      <category term="ssr" scheme="https://rqlyy.top/php00py.github.io/tags/ssr/"/>
+    
+  </entry>
   
   <entry>
     <title>http协议</title>
@@ -140,9 +165,9 @@
       <category term="生活" scheme="https://rqlyy.top/php00py.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="生活" scheme="https://rqlyy.top/php00py.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="清明" scheme="https://rqlyy.top/php00py.github.io/tags/%E6%B8%85%E6%98%8E/"/>
+    
+      <category term="生活" scheme="https://rqlyy.top/php00py.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
