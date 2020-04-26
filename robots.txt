@@ -11,5 +11,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://www.rqlyy.top/sitemap.xml
-Sitemap: https://www.rqlyy.top/baidusitemap.xml
+Sitemap: https://rqlyy.top/sitemap.xml
+Sitemap: https://rqlyy.top/baidusitemap.xml
