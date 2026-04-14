@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<!-- 🔴 修复图片防盗链（关键代码）-->
+<meta name="referrer" content="no-referrer" />
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="北航,网络安全," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="北航网络空间安全复习资料网络空间安全复习资料 第1章 引言  1. 掌握信息安全的四个目标？ 2. 信息系统中常见的威胁有哪些？ 3. 什么是安全策略？安全策略分几个等级？ 4. 什么是访问控制策略？它分为哪两类？有何不同？ 5. 安全攻击分几大类？常见的攻击形式有哪些？ 6. 熟记X.800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。 7. 能够理解并画出网络安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北航网络空间安全复习资料">
+<meta property="og:url" content="https://php00py.github.io/posts/b30fbb9d.html">
+<meta property="og:site_name" content="Php00py">
+<meta property="og:description" content="北航网络空间安全复习资料网络空间安全复习资料 第1章 引言  1. 掌握信息安全的四个目标？ 2. 信息系统中常见的威胁有哪些？ 3. 什么是安全策略？安全策略分几个等级？ 4. 什么是访问控制策略？它分为哪两类？有何不同？ 5. 安全攻击分几大类？常见的攻击形式有哪些？ 6. 熟记X.800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。 7. 能够理解并画出网络安全">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/1eaca8cbaca6e885ae1d8a910de2a5d9.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/6cf460821bd26529099e5c94e66b8775.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/40790c499694fbb55ba79a6e3c18c8bd.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/3f0db5207c5b313bc5cc4b74413ef7dd.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/fe9f0e38bebadefe97e55e2391c65c06.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/64a3017d993b9d9a63e7f9324dc08d7f.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/c501a9a18de996ebb23f91634171b030.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/5438e413f25c3ee16f41820e524c0bfd.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/e25d58bd44503ac6497317b6ba05fa9a.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/5ef65bd7b97e3907d249ffc7d8ea9cc6.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/93e35c993ad97d709f135921e0280798.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/61e0db6fe6f14139773af7128e434f5f.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/c7703e468f609a379ba5b3fc8a1b2da9.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/3151d6440feb92a9d7e35126d49293d4.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/7aaacb051d28464f9112a26cf4ae214d.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/9459bf6c48f1483396c53c15c1438cf1.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/27c0b2beaa26c874e6957bd21f43d836.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/f87199a64e6d42046ac21ae17518bfae.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d1672c0193304440c61a05546a6688b1.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/3ca0e569d207b43d1c07e22e2bc74ad7.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/cfced12abfb56bb6a4460b81694aaa62.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/6b013f1fc51307b5501f8365f5ea5d1c.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/182eec39aad5c8147ce245fef404e20b.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/60f85a2f3b41de52f7e2237ebfa5374a.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/a93bdfc59f2985676cd2e285ac144464.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/2422e6b28cc0b450755c4594565ab261.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/9f21f6b8161c5b66cbc37929543fba3b.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/f7485ebadc4f0c79cc0daa989bc2ed24.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/689472a2bd587d1f5b5d2b8f8d04e168.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/30590844c2fd79097f4a154e15774170.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/9f03b9e7577f16d0eb70d9dcc608569d.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/86dbbb795774cca1983afded7c8f30e4.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/1e2e92ef52bc690b4338a5978bd120a6.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/f7daf398ad7ebf99cb9f386dea08196f.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/6548373291176967b041f91d02a07461.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/c0c786bfcc03d0d4ef16d9d89f24a51b.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d4e2631e4e908c89b8a43f95f513b31b.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/934706742ac66310b6c9eddbe8533a11.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/970c2083b2e3c6219f31283a8a708b7c.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/e7dc9e5408249378df86195d5e143066.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/01a28b435d1e38a1fef57ffb8cce9d1a.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/eec5be5be47d741698fa9222a1b33b29.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/2140c0fb2e59bf2604db98ac8b62026e.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/8d3e39aeb93fa24c8b22954f32fa22f6.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/8f2410e0f48e920af9a67917390b5c90.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/bc73281708c95e846129ac14fe734f1b.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/88aaa9b75f7784b23eff4807856a5fa9.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/e84b5223cbeff614da0282313ccb160d.png">
+<meta property="article:published_time" content="2026-04-14T08:30:00.865Z">
+<meta property="article:modified_time" content="2026-04-14T10:15:53.312Z">
+<meta property="article:author" content="Ranuy">
+<meta property="article:tag" content="北航">
+<meta property="article:tag" content="网络安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/1eaca8cbaca6e885ae1d8a910de2a5d9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://php00py.github.io/posts/b30fbb9d.html"/>
+
+
+
+
+
+  <title>北航网络空间安全复习资料 | Php00py</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Php00py</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"> </h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://php00py.github.io/posts/b30fbb9d.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ranuy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Php00py">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">北航网络空间安全复习资料</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2026-04-14T16:30:00+08:00">
+                2026-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">网络安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/b30fbb9d.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/b30fbb9d.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/b30fbb9d.html" class="leancloud_visitors" data-flag-title="北航网络空间安全复习资料">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  13k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  46
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="北航网络空间安全复习资料"><a href="#北航网络空间安全复习资料" class="headerlink" title="北航网络空间安全复习资料"></a>北航网络空间安全复习资料</h1><h4 id="网络空间安全复习资料"><a href="#网络空间安全复习资料" class="headerlink" title="网络空间安全复习资料"></a>网络空间安全复习资料</h4><ul>
+<li><a href="#1__2">第1章 引言</a></li>
+<li><ul>
+<li><a href="#1__4">1. 掌握信息安全的四个目标？</a></li>
+<li><a href="#2__11">2. 信息系统中常见的威胁有哪些？</a></li>
+<li><a href="#3__17">3. 什么是安全策略？安全策略分几个等级？</a></li>
+<li><a href="#4__23">4. 什么是访问控制策略？它分为哪两类？有何不同？</a></li>
+<li><a href="#5__29">5. 安全攻击分几大类？常见的攻击形式有哪些？</a></li>
+<li><a href="#6_X80058_39">6. 熟记X.800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。</a></li>
+<li><a href="#7__58">7. 能够理解并画出网络安全模型和网络访问模型。</a></li>
+</ul>
+</li>
+<li><a href="#2__64">第2章 计算机网络基础</a></li>
+<li><ul>
+<li><a href="#1_OSITCPIP_65">1. 熟记OSI的七层参考模型、TCP/IP的四层模型。</a></li>
+<li><a href="#2__69">2. 什么是面向连接的服务？什么是无连接的服务？</a></li>
+<li><a href="#3_IPv4IPv6_73">3. 必须知道IPv4及IPv6地址的格式及长度。</a></li>
+<li><a href="#4_MAC_79">4. 必须知道MAC地址的长度。</a></li>
+<li><a href="#5_IPMAC_81">5. IP地址与MAC地址转换靠哪个网络协议？</a></li>
+<li><a href="#6_IPv4IP_83">6. IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。</a></li>
+<li><a href="#7_IPv4_86">7. 给定一个IPv4地址和子网掩码，要求能够计算出网络地址。</a></li>
+<li><a href="#8_CIDR1281432020_88">8. 熟悉CIDR的表示方式，如：128.14.32.0/20表示的地址块范围和子网掩码是什么？</a></li>
+<li><a href="#9__91">9. 什么是端口号？端口号在网络通信中起什么作用？</a></li>
+</ul>
+</li>
+<li><a href="#3_Internet_94">第3章 Internet协议的安全性</a></li>
+<li><ul>
+<li><a href="#1_httpftptelnetpop3smtpimapsshdns_95">1. 熟记http/ftp/telnet/pop3/smtp/imap/ssh/dns等常用通信协议的功能。</a></li>
+<li><a href="#2__105">2. 熟记一些常用网络协议的端口号。</a></li>
+<li><a href="#3__106">3. 网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？</a></li>
+<li><a href="#4_NAT_218">4. 为什么要进行网络地址转换（NAT）</a></li>
+<li><a href="#5_ARP_220">5. ARP协议的作用是什么？</a></li>
+<li><a href="#6_UDPTCP_223">6. 为什么UDP比TCP协议更加容易遭到攻击？</a></li>
+<li><a href="#7_IMAPPOP3_226">7. IMAP与POP3协议相比，它的安全性有那些提升？</a></li>
+<li><a href="#8_SSHTelnet_229">8. SSH与Telnet协议相比，它的安全性有那些提升？</a></li>
+<li><a href="#9_ICMP_231">9. 什么是ICMP重定向攻击？如何防止此类攻击？</a></li>
+<li><a href="#10_IPIP_234">10. 在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？</a></li>
+</ul>
+</li>
+<li><a href="#4__237">第4章 单钥密码体制</a></li>
+<li><ul>
+<li><a href="#1__238">1. 按照对明文消息的处理方式不同，单钥体制可分为哪两类？</a></li>
+<li><a href="#2__240">2. 古典密码中的两个常用的变换是什么？</a></li>
+<li><a href="#3__242">3. 什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？</a></li>
+<li><a href="#4__246">4. 什么是同步流密码、自同步流密码？流密码的安全性取决于什么？</a></li>
+<li><a href="#5_DES1DES_250">5. DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？</a></li>
+<li><a href="#6_AES1AES_251">6. AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？</a></li>
+<li><a href="#7_2_261">7. 加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？</a></li>
+<li><a href="#8_55_263">8. 分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。</a></li>
+<li><a href="#9_5_275">9. 分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？</a></li>
+<li><a href="#10_SM4_282">10. 了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。</a></li>
+</ul>
+</li>
+<li><a href="#5__284">第5章 双钥密码体制</a></li>
+<li><ul>
+<li><a href="#1__285">1. 双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？</a></li>
+<li><a href="#2_RSADiffieHellman_288">2. RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？</a></li>
+<li><a href="#3_RSA_291">3. 请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算</a></li>
+<li><a href="#4_RSA_298">4. RSA在各种参数选择上有哪些原则和限制？为什么？</a></li>
+<li><a href="#5_ELGamal_305">5. 写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？</a></li>
+<li><a href="#6_ECC_308">6. ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？</a></li>
+<li><a href="#7_ECCDiffieHellman_311">7. 写出基于ECC的Diffie-Hellman密钥交换协议。</a></li>
+<li><a href="#8_RSAECC_314">8. RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。</a></li>
+<li><a href="#9__318">9. 对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？</a></li>
+<li><a href="#10_SM2_322">10. 了解中国的商用公钥密码算法SM2。</a></li>
+</ul>
+</li>
+<li><a href="#6__330">第6章 消息认证与杂凑函数</a></li>
+<li><ul>
+<li><a href="#1_Hash_331">1. 请说明Hash函数与加密函数有何不同？</a></li>
+<li><a href="#2__335">2. 杂凑函数具有哪些性质？</a></li>
+<li><a href="#3_MAC_342">3. 什么是消息认证码MAC？如何构造？</a></li>
+<li><a href="#4_MAC167_345">4. 在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）</a></li>
+<li><a href="#5_HashMAC_351">5. 如何采用Hash函数和分组加密算法构造MAC？</a></li>
+<li><a href="#6_MDCMDCMAC_354">6. 什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。</a></li>
+<li><a href="#7__359">7. 熟悉迭代杂凑函数的构造方法。</a></li>
+<li><a href="#8_MD5_361">8. MD5的明文输入分组长度、字长、输出长度是多少位？</a></li>
+<li><a href="#9_SHA1_362">9. SHA-1的明文输入分组长度、字长、输出长度是多少位？</a></li>
+<li><a href="#10_61626566_364">10. 掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。</a></li>
+<li><a href="#11_SM3_377">11. 熟悉中国商用杂凑函数SM3的构造。</a></li>
+</ul>
+</li>
+<li><a href="#7__380">第7章 数字签名</a></li>
+<li><ul>
+<li><a href="#1__381">1. 数字签名应该具有哪些性质？</a></li>
+<li><a href="#2__388">2. 数字签名可以分为哪几类？</a></li>
+<li><a href="#3_RSA_390">3. RSA签名是基于何种数学难题？</a></li>
+<li><a href="#4_ElGamalElGamal_392">4. ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。</a></li>
+<li><a href="#5_SchnorrElGamal_396">5. Schnorr签名与ElGamal签名有何不同？请比较两者的异同。</a></li>
+<li><a href="#6_DSSElGamalSchnorr_400">6. 请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。</a></li>
+<li><a href="#7_kk_406">7. 在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。</a></li>
+<li><a href="#8_DiffieHellman_408">8. Diffie-Hellman能用来做数字签名吗？</a></li>
+<li><a href="#9__412">9. 单钥体制能用来做数字签名吗？</a></li>
+<li><a href="#10__415">10. 试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。</a></li>
+<li><a href="#11__417">11. 请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？</a></li>
+<li><a href="#12_SM2_427">12. 了解中国商用数字签名算法SM2。</a></li>
+</ul>
+</li>
+<li><a href="#8__430">第8章 密码协议</a></li>
+<li><ul>
+<li><a href="#1__431">1. 构成协议的三个主要特征（含义）是什么？</a></li>
+<li><a href="#2__438">2. 什么是仲裁协议？什么是裁决协议？什么是自执行协议？</a></li>
+<li><a href="#3__442">3. 如果按照密码协议的功能分类，密码协议可以分为哪几类？</a></li>
+<li><a href="#4_DiffieHellmanDiffieHellman_446">4. 什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。</a></li>
+<li><a href="#5_DHDH_450">5. DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？</a></li>
+<li><a href="#6_DiffieHellman_454">6. Diffie-Hellman能用来做数字签名吗？</a></li>
+<li><a href="#7_YahalomKerberos_457">7. 掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。</a></li>
+<li><a href="#8_218SKID_464">8. 请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？</a></li>
+<li><a href="#9__472">9. 对密码协议的攻击方法有哪些？</a></li>
+<li><a href="#10__479">10. 密码协议的安全性分析的常用方法有哪些？</a></li>
+</ul>
+</li>
+<li><a href="#9__485">第9章 数字证书与公钥基础设施</a></li>
+<li><ul>
+<li><a href="#1_PKIPKI_486">1. 什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？</a></li>
+<li><a href="#3_X509_509">3. 了解X.509标准规定的数字证书的格式。</a></li>
+<li><a href="#4__512">4. 实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？</a></li>
+<li><a href="#5__516">5. 数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？</a></li>
+<li><a href="#6_CACA_520">6. 在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？</a></li>
+<li><a href="#7__523">7. 什么是交叉证书？</a></li>
+<li><a href="#8__527">8. 如何实现数字证书的撤销？如何实现数字证书的在线查询？</a></li>
+<li><a href="#9__537">9. 什么是漫游证书？简述其基本工作原理。</a></li>
+<li><a href="#10_PKICA_551">10. 一个PKI/CA数字证书系统由哪几部分构成？</a></li>
+</ul>
+</li>
+<li><a href="#10__554">第10章 网络加密与密钥管理</a></li>
+<li><ul>
+<li><a href="#1__555">1. 什么是链路加密？有什么优缺点？</a></li>
+<li><a href="#2__566">2. 什么是节点加密？有什么优缺点？</a></li>
+<li><a href="#5__599">5. 什么是密钥管理？它包括哪些方面的管理？</a></li>
+<li><a href="#6__603">6. 密钥有哪些种类？它们各自有什么用途？</a></li>
+<li><a href="#7__615">7. 有哪些密钥分配的基本方法？</a></li>
+<li><a href="#8__623">8. 在用密钥枪注入密钥时，如何验证密钥注入的正确性？</a></li>
+<li><a href="#9__626">9. 密钥管理为什么要将密钥划分成不同的层次？</a></li>
+<li><a href="#10__630">10. 一个密钥管理系统由哪几部分构成？（本题没找到）</a></li>
+<li><a href="#11_12_634">11. 密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。</a></li>
+<li><a href="#12__648">12. 查找资料，了解一个好的密钥应具备哪些数学特性？</a></li>
+</ul>
+</li>
+<li><a href="#11__656">第11章 无线网络安全</a></li>
+<li><ul>
+<li><a href="#1__657">1. 无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。</a></li>
+<li><a href="#2_GSM_663">2. GSM系统有哪些主要安全缺陷？</a></li>
+<li><a href="#3_3G2G3G_677">3. 3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？</a></li>
+<li><a href="#4_4G3G_4G_695">4. 4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比， 4G作出了哪些安全性改进？</a></li>
+<li><a href="#5_GSM_707">5. 请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。</a></li>
+<li><a href="#6_3G_717">6. 请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。</a></li>
+<li><a href="#7_2G3G4GRANDRAND_729">7. 为何2G/3G/4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。</a></li>
+<li><a href="#8_2G3G4G5G_735">8. 与2G/3G/4G相比，5G在哪些方面提升了安全性？</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="第1章-引言"><a href="#第1章-引言" class="headerlink" title="第1章 引言"></a>第1章 引言</h2><h3 id="1-掌握信息安全的四个目标？"><a href="#1-掌握信息安全的四个目标？" class="headerlink" title="1. 掌握信息安全的四个目标？"></a>1. 掌握信息安全的四个目标？</h3><p><strong>（CIA+合法使用）</strong></p>
+<ul>
+<li>保密性</li>
+<li>完整性</li>
+<li>可用性</li>
+<li>合法使用</li>
+</ul>
+<h3 id="2-信息系统中常见的威胁有哪些？"><a href="#2-信息系统中常见的威胁有哪些？" class="headerlink" title="2. 信息系统中常见的威胁有哪些？"></a>2. 信息系统中常见的威胁有哪些？</h3><p><strong>（CIA+非法使用）</strong></p>
+<ul>
+<li>信息泄露</li>
+<li>完整性破坏</li>
+<li>拒绝服务</li>
+<li>非法使用</li>
+</ul>
+<h3 id="3-什么是安全策略？安全策略分几个等级？"><a href="#3-什么是安全策略？安全策略分几个等级？" class="headerlink" title="3. 什么是安全策略？安全策略分几个等级？"></a>3. 什么是安全策略？安全策略分几个等级？</h3><p>在某个<strong>安全域</strong>内，施加给所有与<strong>安全相关活动</strong>的一套<strong>规则</strong>。<br> 分为3个等级：</p>
+<ul>
+<li>安全策略<strong>目标</strong></li>
+<li><strong>机构</strong>安全策略</li>
+<li><strong>系统</strong>安全策略。</li>
+</ul>
+<h3 id="4-什么是访问控制策略？它分为哪两类？有何不同？"><a href="#4-什么是访问控制策略？它分为哪两类？有何不同？" class="headerlink" title="4. 什么是访问控制策略？它分为哪两类？有何不同？"></a>4. 什么是访问控制策略？它分为哪两类？有何不同？</h3><p>访问控制策略属于<strong>系统级安全策略</strong>，它迫使计算机系统和网络<strong>自动执行授权</strong>。<br> 分为两类：</p>
+<ul>
+<li><strong>强制性</strong>访问策略：由操作<strong>系统内核强制</strong>实施<strong>授权</strong>规则，<strong>检查</strong>主体的安全属性，并决定是否可以<strong>访问</strong></li>
+<li><strong>自主性</strong>访问策略：由客体的<strong>属主</strong>对自己的客体进行管理，由属主决定是否将自己的<strong>客体访问权</strong>或<strong>部分访问权授予</strong>其他主体。</li>
+</ul>
+<h3 id="5-安全攻击分几大类？常见的攻击形式有哪些？"><a href="#5-安全攻击分几大类？常见的攻击形式有哪些？" class="headerlink" title="5. 安全攻击分几大类？常见的攻击形式有哪些？"></a>5. 安全攻击分几大类？常见的攻击形式有哪些？</h3><ul>
+<li>被动攻击<ul>
+<li>窃听攻击</li>
+<li>流量分析</li>
+</ul>
+</li>
+<li>主动攻击<ul>
+<li>伪装攻击</li>
+<li>重放攻击</li>
+<li>消息篡改</li>
+<li>拒绝服务</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-熟记X-800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。"><a href="#6-熟记X-800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。" class="headerlink" title="6. 熟记X.800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。"></a>6. 熟记X.800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。</h3><ul>
+<li>安全服务（CI+认证+访问控制（合法使用）+不可否认（可用性））<ul>
+<li>认证</li>
+<li>访问控制</li>
+<li>数据保密性</li>
+<li>数据完整性</li>
+<li>不可否认性</li>
+</ul>
+</li>
+<li>安全机制<ul>
+<li>加密</li>
+<li>数字签名</li>
+<li>访问控制</li>
+<li>数据完整性</li>
+<li>认证交换</li>
+<li>流量填充</li>
+<li>路由控制</li>
+<li>公证</li>
+</ul>
+</li>
+<li>安全服务和安全机制的关系<br> 安全服务通过安全机制实现安全策略<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/1eaca8cbaca6e885ae1d8a910de2a5d9.png" alt="安全服务和安全机制之间的关系"></li>
+</ul>
+<h3 id="7-能够理解并画出网络安全模型和网络访问模型。"><a href="#7-能够理解并画出网络安全模型和网络访问模型。" class="headerlink" title="7. 能够理解并画出网络安全模型和网络访问模型。"></a>7. 能够理解并画出网络安全模型和网络访问模型。</h3><p>网络安全模型<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/6cf460821bd26529099e5c94e66b8775.png" alt="网络安全模型"><br> 网络访问模型<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/40790c499694fbb55ba79a6e3c18c8bd.png" alt="网络访问模型"></p>
+<h2 id="第2章-计算机网络基础"><a href="#第2章-计算机网络基础" class="headerlink" title="第2章 计算机网络基础"></a>第2章 计算机网络基础</h2><h3 id="1-熟记OSI的七层参考模型、TCP-IP的四层模型。"><a href="#1-熟记OSI的七层参考模型、TCP-IP的四层模型。" class="headerlink" title="1. 熟记OSI的七层参考模型、TCP/IP的四层模型。"></a>1. 熟记OSI的七层参考模型、TCP/IP的四层模型。</h3><p>OSI七层参考模型：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。<br> TCP/IP四层模型：网际接口层、网络层、传输层、应用层。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/3f0db5207c5b313bc5cc4b74413ef7dd.png" alt="计算机网络体系结构"></p>
+<h3 id="2-什么是面向连接的服务？什么是无连接的服务？"><a href="#2-什么是面向连接的服务？什么是无连接的服务？" class="headerlink" title="2. 什么是面向连接的服务？什么是无连接的服务？"></a>2. 什么是面向连接的服务？什么是无连接的服务？</h3><p>面向连接的服务要求通信双方在传输<strong>数据之前</strong>首先<strong>建立连接</strong>，数据传输过程包括<strong>建立连接</strong>、<strong>传输数据</strong>、<strong>释放连接</strong>三个阶段。<br> 无连接的服务<strong>不要求</strong>通信双方在传输数据之前建立连接，是“<strong>尽力传递（交付）</strong>”的服务，它尽最大努力是传输数据到达目标。</p>
+<h3 id="3-必须知道IPv4及IPv6地址的格式及长度。"><a href="#3-必须知道IPv4及IPv6地址的格式及长度。" class="headerlink" title="3. 必须知道IPv4及IPv6地址的格式及长度。"></a>3. 必须知道IPv4及IPv6地址的格式及长度。</h3><ul>
+<li>IPv4格式 = &lt;网络标识net-id&gt; &lt;主机标识host-id&gt;<br> IPv4长度：32bit</li>
+<li>IPv6格式 = &lt;站点前缀&gt; &lt;子网ID&gt;&lt;接口ID&gt;<br> IPv6长度：128bit</li>
+</ul>
+<h3 id="4-必须知道MAC地址的长度。"><a href="#4-必须知道MAC地址的长度。" class="headerlink" title="4. 必须知道MAC地址的长度。"></a>4. 必须知道MAC地址的长度。</h3><p>48bit</p>
+<h3 id="5-IP地址与MAC地址转换靠哪个网络协议？"><a href="#5-IP地址与MAC地址转换靠哪个网络协议？" class="headerlink" title="5. IP地址与MAC地址转换靠哪个网络协议？"></a>5. IP地址与MAC地址转换靠哪个网络协议？</h3><p>ARP协议</p>
+<h3 id="6-IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。"><a href="#6-IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。" class="headerlink" title="6. IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。"></a>6. IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。</h3><p>注意A类地址不包括本机的127范围地址。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/fe9f0e38bebadefe97e55e2391c65c06.png" alt="IPv4该地址"></p>
+<h3 id="7-给定一个IPv4地址和子网掩码，要求能够计算出网络地址。"><a href="#7-给定一个IPv4地址和子网掩码，要求能够计算出网络地址。" class="headerlink" title="7. 给定一个IPv4地址和子网掩码，要求能够计算出网络地址。"></a>7. 给定一个IPv4地址和子网掩码，要求能够计算出网络地址。</h3><p>IPv4格式 = &lt;网络标识net-id&gt; &lt;主机标识host-id&gt;</p>
+<h3 id="8-熟悉CIDR的表示方式，如：128-14-32-0-20表示的地址块范围和子网掩码是什么？"><a href="#8-熟悉CIDR的表示方式，如：128-14-32-0-20表示的地址块范围和子网掩码是什么？" class="headerlink" title="8. 熟悉CIDR的表示方式，如：128.14.32.0/20表示的地址块范围和子网掩码是什么？"></a>8. 熟悉CIDR的表示方式，如：128.14.32.0/20表示的地址块范围和子网掩码是什么？</h3><p>子网掩码：255.255.240.0<br> 地址块范围128.14.32.1 - 128.14.47.254</p>
+<h3 id="9-什么是端口号？端口号在网络通信中起什么作用？"><a href="#9-什么是端口号？端口号在网络通信中起什么作用？" class="headerlink" title="9. 什么是端口号？端口号在网络通信中起什么作用？"></a>9. 什么是端口号？端口号在网络通信中起什么作用？</h3><p>端口号是按照应用进程的<strong>功能</strong>对应用进程<strong>实行</strong>的<strong>标识</strong>。（端口号长度为16bit）<br> 在通信过程中，端口号和<strong>IP地址</strong>绑定使用，形成的<strong>标识</strong>称为插口，在网络中<strong>唯一</strong>对应某个主机的某个进程。</p>
+<h2 id="第3章-Internet协议的安全性"><a href="#第3章-Internet协议的安全性" class="headerlink" title="第3章 Internet协议的安全性"></a>第3章 Internet协议的安全性</h2><h3 id="1-熟记http-ftp-telnet-pop3-smtp-imap-ssh-dns等常用通信协议的功能。"><a href="#1-熟记http-ftp-telnet-pop3-smtp-imap-ssh-dns等常用通信协议的功能。" class="headerlink" title="1. 熟记http/ftp/telnet/pop3/smtp/imap/ssh/dns等常用通信协议的功能。"></a>1. 熟记http/ftp/telnet/pop3/smtp/imap/ssh/dns等常用通信协议的功能。</h3><ul>
+<li>Http(TCP80)：超文本传输协议用于<strong>传送Web数据</strong></li>
+<li>FTP(TCP20/21)：文件传输协议是Internet文件传送的基础</li>
+<li>Telnet(TCP23)：远程登录协议提供远程登录服务</li>
+<li>Pop3(TCP110)：接收邮件</li>
+<li>SMTP(TCP25)：发送邮件</li>
+<li>SSH(TCP22)：为远程登录会话和其他网络服务提供安全性的协议</li>
+<li>DNS(UDP53)：分布式的数据库系统，用来实现域名与IP之间的映射</li>
+<li>DHCP(UDP 67/68)：动态主机配置协议，用于分配IP地址，提供启动计算机其他信息的协议</li>
+<li>IMAP(TCP143)：邮件获取协议，支持离线阅读，支持用户认证和用户对服务器的远程加密访问</li>
+</ul>
+<h3 id="2-熟记一些常用网络协议的端口号。"><a href="#2-熟记一些常用网络协议的端口号。" class="headerlink" title="2. 熟记一些常用网络协议的端口号。"></a>2. 熟记一些常用网络协议的端口号。</h3><h3 id="3-网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？"><a href="#3-网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？" class="headerlink" title="3. 网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？"></a>3. 网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？</h3><ul>
+<li><p>网际层：</p>
+<ul>
+<li>IP<br> 网际协议（Internet Protocol，IP）是TCP/IP协议族的核心，也是网际层最重要的协议。首部前一部分是固定长度 20字节，是数据报必有的</li>
+<li>ARP<br> 地址解析协议（Address Resolution Protocol，ARP）是根据IP地址获取物理地址的一个TCP/IP协议。</li>
+<li>ICMP<br> 控制报文协议（Internet Control Message Protocol， ICMP）是一个重要的错误处理和信息处理协议。</li>
+<li>IGMP<br> 组管理协议（Internet Group Management Protocol，IGMP） 是TCP/IP 协议族中负责IP 组播成员管理的协议。</li>
+<li>OSPF<br> 开放最短路径优先协议（Open Shortest Path First， OSPF）是一个内部网关协议，用于在单一自治系统内决策路由。</li>
+<li>BGP<br> 边界网关协议（Border Gateway Protocol，BGP）将 单一管理的网络转化为由多个自治系统分散互连的网络。</li>
+</ul>
+</li>
+<li><p>传输层：</p>
+<ul>
+<li>TCP<br> 传输控制协议（Transmission Control Protocol，TCP） 是一种面向连接的、可靠的的传输层通信协议。</li>
+<li>UDP<br> 用户数据报协议（User Datagram Protocol，UDP）是 一种无连接的传输层协议，提供面向事务的简单不可靠 信息传送服务。</li>
+</ul>
+</li>
+<li><p>应用层：</p>
+<ul>
+<li>HTTP<br> TCP80<br> 超文本传输协议（Hyper Text Transfer Protocol，HTTP） 是一个客户端和服务器端请求和应答的标准，是互联网上 应用最广泛的一种网络协议。</li>
+<li>TELNET<br> TCP23<br> 远程登录协议（Teletype Network，TELNET）是TCP/IP 协议族中的一员，是Internet远程登录服务的标准协议和主要方式。</li>
+<li>SSH<br> TCP22<br> 安全壳协议（Secure Shell，SSH）是一种在不安全的网 络上建立安全的远程登录或其他安全网络服务的协议。</li>
+<li>DNS<br> UDP53<br> 域名系统（Domain Name System，DNS）是一个分布式 数据库系统，用来实现域名与IP地址之间的映射。</li>
+<li>SMTP<br> TCP25<br> 简单邮件传输协议（Simple Mail Transfer Protocol，SMTP） 是一组用于由源地址到目的地址传送邮件的规则，由它来控制信 件的中转方式。</li>
+<li>POP3<br> TCP110<br> 邮局协议（Post Office Protocol，POP）是一个邮件协议， 它的第3个版本称为POP3。</li>
+<li>IMAP4<br> TCP 143,993<br> 消息访问协议（Internet Message Access Protocol，IMAP）是 一个邮件获取协议，第4个版本是IMAP4。</li>
+<li>FTP<br> TCP20/21<br> 文件传输协议（File Transfer Protocol，FTP）是Internet文件传送 的基础，是TCP/IP协议族的重要协议之一。</li>
+<li>TFIP<br> UDP69<br> 简单文件传输协议（Trivial File Transfer Protocol，TFTP）是用来 在客户机与服务器之间进行简单文件传输的协议。</li>
+<li>NFS<br> UDP2049<br> 网络文件系统（Network File System，NFS）是一个基于TCP/IP网 络的文件共享协议。</li>
+<li>SNMP<br> UDP161/162<br> 简单网络管理协议（Simple Network Management Protocol， SNMP）是用于支持网络管理系统的协议。</li>
+<li>DHCP<br> UDP67/68<br> 动态主机配置协议（Dynamic Host Configuration Protocol， DHCP）用于分配IP地址、提供启动计算机其他信息的协议。</li>
+<li>H.323<br> H.323是一种用于VoIP（Voice over IP）在分组网上提供实 时音频、视频和数据通信的标准（NetMeeting）。</li>
+<li>SIP<br> 会话启动协议（Session Initiation Protocol，SIP）是由IETF制定的 基于文本编码的多媒体通信协议（如VoLTE）。</li>
+<li>NTP<br> UDP123<br> 网络时间协议（Network Time Protocol，NTP）可在分布式 时间服务器和客户端之间进行时间同步。</li>
+<li>FINGER<br> UDP79<br> Finger协议可以帮助用户查询系统中某一个用户的细节，如 其全名、住址、电话号码、登录细节等。</li>
+<li>Whois<br> TCP43<br> Whois协议是用来查询域名的IP以及所有者等信息的传输协议。</li>
+<li>LDAP<br> TCP389<br> 轻量级目录访问协议（Lightweight Directory Access Protocol， LDAP）是基于X.500的目录访问协议，以目录的形式来管理资源。</li>
+<li>NNTP<br> TCP119<br> 网络消息通常通过网络消息传输协议NNTP进行传输，采用的 网络新闻传输协议（Network News Transfer Protocol，NNTP） 会话与SMTP相类似，接收和发送的消息条目通过网关来处理和 是一个用于阅读和张贴新闻文章到Usenet上的Internet应用协议。 转发。这种协议只用来阅读新闻。</li>
+<li>PGP<br> PGP（Pretty Good Privacy）协议是常用的安全电子邮件标准。 PGP包括5种服务：认证、保密、压缩、电子邮件兼容和分段。</li>
+<li>RIP<br> UDP520<br> 动态路由选择协议 （ Routing Information Protocol ， RIP）是一种动态内部路由/网关协议，用于自治系统内的 路由信息的传递。</li>
+<li>MIME<br> 多用途网间邮件扩充协议（Multipurpose Internet E-mail Extention， MIME）是广泛应用的一种电子邮件技术规范</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-为什么要进行网络地址转换（NAT）"><a href="#4-为什么要进行网络地址转换（NAT）" class="headerlink" title="4. 为什么要进行网络地址转换（NAT）"></a>4. 为什么要进行网络地址转换（NAT）</h3><p>亚洲国家<strong>IP地址短缺</strong>，NAT可解决地址紧缺的问题。NAT的优点：隐藏<strong>内部网络的拓扑结构</strong>，提升网络安全性。</p>
+<h3 id="5-ARP协议的作用是什么？"><a href="#5-ARP协议的作用是什么？" class="headerlink" title="5. ARP协议的作用是什么？"></a>5. ARP协议的作用是什么？</h3><p>根据IP地址获取物理地址，确定两者之间的<strong>映射关系</strong>。<br> 以太网发送的是48位以太地址的数据包; IP驱动程序必须将32位IP目标地址转换成48位地址; 两类地址存在静态或算法上的映射； ARP用来确定两者之间的映射关系。</p>
+<h3 id="6-为什么UDP比TCP协议更加容易遭到攻击？"><a href="#6-为什么UDP比TCP协议更加容易遭到攻击？" class="headerlink" title="6. 为什么UDP比TCP协议更加容易遭到攻击？"></a>6. 为什么UDP比TCP协议更加容易遭到攻击？</h3><p>UDP没有交换握手信息和序列号，是无连接的传输层协议，不可靠。</p>
+<h3 id="7-IMAP与POP3协议相比，它的安全性有那些提升？"><a href="#7-IMAP与POP3协议相比，它的安全性有那些提升？" class="headerlink" title="7. IMAP与POP3协议相比，它的安全性有那些提升？"></a>7. IMAP与POP3协议相比，它的安全性有那些提升？</h3><p>POP3中<strong>口令</strong>以明文传输，IMAP协议使用SSL/TLS对<strong>传输的数据</strong>进行加密。</p>
+<h3 id="8-SSH与Telnet协议相比，它的安全性有那些提升？"><a href="#8-SSH与Telnet协议相比，它的安全性有那些提升？" class="headerlink" title="8. SSH与Telnet协议相比，它的安全性有那些提升？"></a>8. SSH与Telnet协议相比，它的安全性有那些提升？</h3><p>Telnet通过用户输入账户名称和<strong>明文</strong>口令进行登录，可能会造成秘密信息泄露和Telnet会话劫持；SSH支持多种<strong>身份认证</strong>和<strong>数据加密</strong>，对所有传输的数据进行加密处理，并采用**“挑战/响应”机制<strong>替代传统的主机名和口令认证，能有效</strong>防止中间人攻击**。</p>
+<h3 id="9-什么是ICMP重定向攻击？如何防止此类攻击？"><a href="#9-什么是ICMP重定向攻击？如何防止此类攻击？" class="headerlink" title="9. 什么是ICMP重定向攻击？如何防止此类攻击？"></a>9. 什么是ICMP重定向攻击？如何防止此类攻击？</h3><p>攻击：攻击者可以利用ICMP对消息进行重定向，使得目标机器按照攻击者的信息来<strong>修改路由表</strong>，遭受连接劫持和拒绝服务等攻击。<br> 防止：重定向消息应该仅由产生消息的主机或路由器执行，网管员不应使用ICMP创建通往目的地的新路由，应当<strong>禁用ICMP协议</strong>或配置<strong>防火墙</strong>的安全策略以预防攻击。</p>
+<h3 id="10-在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？"><a href="#10-在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？" class="headerlink" title="10. 在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？"></a>10. 在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？</h3><p>IP层不能保证IP数据报一定是从<strong>源地址</strong>发送的。攻击者可<strong>伪装</strong>成另一网络主机，发送含有<strong>伪造源地址</strong>的数据包欺骗接受者。此攻击称为IP欺骗攻击。</p>
+<h2 id="第4章-单钥密码体制"><a href="#第4章-单钥密码体制" class="headerlink" title="第4章 单钥密码体制"></a>第4章 单钥密码体制</h2><h3 id="1-按照对明文消息的处理方式不同，单钥体制可分为哪两类？"><a href="#1-按照对明文消息的处理方式不同，单钥体制可分为哪两类？" class="headerlink" title="1. 按照对明文消息的处理方式不同，单钥体制可分为哪两类？"></a>1. 按照对明文消息的处理方式不同，单钥体制可分为哪两类？</h3><p>分组密码、流密码。</p>
+<h3 id="2-古典密码中的两个常用的变换是什么？"><a href="#2-古典密码中的两个常用的变换是什么？" class="headerlink" title="2. 古典密码中的两个常用的变换是什么？"></a>2. 古典密码中的两个常用的变换是什么？</h3><p>代换、置换。</p>
+<h3 id="3-什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？"><a href="#3-什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？" class="headerlink" title="3. 什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？"></a>3. 什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？</h3><p>理论上安全：假定攻击者拥有<strong>无限</strong>的计算资源，但仍然无法得到任何优势。<br> 计算上安全：假定攻击者拥有在<strong>多项式时间</strong>内运行的有限算力，并且攻击者能够得到的优势是<strong>可忽略</strong>的。<br> 理论上安全的密码算法有1个，是一次一密（One-time pad）。</p>
+<h3 id="4-什么是同步流密码、自同步流密码？流密码的安全性取决于什么？"><a href="#4-什么是同步流密码、自同步流密码？流密码的安全性取决于什么？" class="headerlink" title="4. 什么是同步流密码、自同步流密码？流密码的安全性取决于什么？"></a>4. 什么是同步流密码、自同步流密码？流密码的安全性取决于什么？</h3><p>若某一时刻密钥流生成器<strong>内部状态</strong>与明文消息<strong>无关</strong>，则密钥流将独立于明文，称此类流密码为同步流密码。<br> 密钥流与明文<strong>有关</strong>，称这类流密码为自同步流密码。<br> 流密码的安全性完全依赖于<strong>伪随机数的强度</strong>。</p>
+<h3 id="5-DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？"><a href="#5-DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？" class="headerlink" title="5. DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？"></a>5. DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？</h3><h3 id="6-AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？"><a href="#6-AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？" class="headerlink" title="6. AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？"></a>6. AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？</h3><table>
+<thead>
+<tr>
+<th>密码算法</th>
+<th>分组长度</th>
+<th>密钥长度</th>
+<th>轮数</th>
+<th>1轮加密包括变换</th>
+<th>非线性变换</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DES</td>
+<td>64bit</td>
+<td>56bit</td>
+<td>16</td>
+<td>E盒置换+轮密钥加+S盒代换+P盒置换+左右分组交换</td>
+<td>8个S盒代换</td>
+</tr>
+<tr>
+<td>AES</td>
+<td>128bit</td>
+<td>128/192/256bit</td>
+<td>10/12/14</td>
+<td>字节代换+行移位+列混淆+轮密钥加</td>
+<td>字节代换、列混淆</td>
+</tr>
+</tbody></table>
+<p>DES算法<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/64a3017d993b9d9a63e7f9324dc08d7f.png" alt="DES"><br> AES算法<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/c501a9a18de996ebb23f91634171b030.png" alt="AES"></p>
+<h3 id="7-加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？"><a href="#7-加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？" class="headerlink" title="7. 加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？"></a>7. 加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？</h3><p>加密轮数不是越多越好，密钥不是越长越好，串联不一定更安全。</p>
+<h3 id="8-分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。"><a href="#8-分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。" class="headerlink" title="8. 分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。"></a>8. 分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。</h3><p>电码本模式ECB：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/5438e413f25c3ee16f41820e524c0bfd.png" alt="在这里插入图片描述"><br> 密文分组链接模式CBC：<img src="https://i-blog.csdnimg.cn/blog_migrate/e25d58bd44503ac6497317b6ba05fa9a.png" alt="在这里插入图片描述"><br> 密码反馈模式CFB：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/5ef65bd7b97e3907d249ffc7d8ea9cc6.png" alt="在这里插入图片描述"><br> <img src="https://i-blog.csdnimg.cn/blog_migrate/93e35c993ad97d709f135921e0280798.png" alt="在这里插入图片描述"><br> 输出反馈模式OFB：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/61e0db6fe6f14139773af7128e434f5f.png" alt="在这里插入图片描述"><br> <img src="https://i-blog.csdnimg.cn/blog_migrate/c7703e468f609a379ba5b3fc8a1b2da9.png" alt="在这里插入图片描述"><br> 计数器模式CTR：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/3151d6440feb92a9d7e35126d49293d4.png" alt="在这里插入图片描述"></p>
+<h3 id="9-分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？"><a href="#9-分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？" class="headerlink" title="9. 分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？"></a>9. 分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？</h3><p>没有误码扩展：CTR、OFB<br>有误码扩展：<br>ECB影响1个分组，即当前分组。<br>CBC影响2个分组，即当前分组和下个分组（的1bit）。<br>CFB影响2个分组，即当前分组（的1bit）和下个分组。<br>考虑移位寄存器时最多影响 ⌈n/s⌉（有可能提前移出，影响分组会较少）。<br>*<em>无扩散：OFB、CTR    *</em></p>
+<p><strong>自损：ECB（1 个）</strong></p>
+<p><strong>连坐：CBC（2 个）</strong></p>
+<p><strong>连环炸：CFB（一串）</strong></p>
+<h3 id="10-了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。"><a href="#10-了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。" class="headerlink" title="10. 了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。"></a>10. 了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。</h3><p>128bit，128bit，32。</p>
+<h2 id="第5章-双钥密码体制"><a href="#第5章-双钥密码体制" class="headerlink" title="第5章 双钥密码体制"></a>第5章 双钥密码体制</h2><h3 id="1-双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？"><a href="#1-双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？" class="headerlink" title="1. 双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？"></a>1. 双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？</h3><p>多项式求根，大整数分解，离散对数，背包问题，DH问题，二次剩余问题，模n的平方根问题。<br> 加密时用解密者的公钥，解密时用解密者的私钥。</p>
+<h3 id="2-RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？"><a href="#2-RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？" class="headerlink" title="2. RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？"></a>2. RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？</h3><p>RSA是基于模n大整数分解的困难性构造的。<br> Diffie-Hellman是基于Diffie-Hellman问题构造的。</p>
+<h3 id="3-请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算"><a href="#3-请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算" class="headerlink" title="3. 请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算"></a>3. 请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算</h3><p>RSA加解密数学表达式：</p>
+<p><img src="https://i-blog.csdnimg.cn/direct/7aaacb051d28464f9112a26cf4ae214d.png" alt=""></p>
+<pre><code>加密：c=memodn（公钥 e,n）
+解密：m=cdmodn（私钥 d,n）</code></pre><h3 id="4-RSA在各种参数选择上有哪些原则和限制？为什么？"><a href="#4-RSA在各种参数选择上有哪些原则和限制？为什么？" class="headerlink" title="4. RSA在各种参数选择上有哪些原则和限制？为什么？"></a>4. RSA在各种参数选择上有哪些原则和限制？为什么？</h3><p><img src="https://i-blog.csdnimg.cn/direct/9459bf6c48f1483396c53c15c1438cf1.png" alt=""></p>
+<h3 id="5-写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？"><a href="#5-写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？" class="headerlink" title="5. 写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？"></a>5. 写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？</h3><p>离散对数问题。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/27c0b2beaa26c874e6957bd21f43d836.png" alt="在这里插入图片描述"></p>
+<h3 id="6-ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？"><a href="#6-ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？" class="headerlink" title="6. ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？"></a>6. ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？</h3><p>椭圆曲线上的离散对数问题。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/f87199a64e6d42046ac21ae17518bfae.png" alt="在这里插入图片描述"></p>
+<h3 id="7-写出基于ECC的Diffie-Hellman密钥交换协议。"><a href="#7-写出基于ECC的Diffie-Hellman密钥交换协议。" class="headerlink" title="7. 写出基于ECC的Diffie-Hellman密钥交换协议。"></a>7. 写出基于ECC的Diffie-Hellman密钥交换协议。</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/d1672c0193304440c61a05546a6688b1.png" alt="在这里插入图片描述"><br> <img src="https://i-blog.csdnimg.cn/blog_migrate/3ca0e569d207b43d1c07e22e2bc74ad7.png" alt="在这里插入图片描述"></p>
+<h3 id="8-RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。"><a href="#8-RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。" class="headerlink" title="8. RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。"></a>8. RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。</h3><p>在达到同等安全性需求时，ECC具有更短的密钥长度，虽然计算更复杂，但加密速度更快。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/cfced12abfb56bb6a4460b81694aaa62.png" alt="在这里插入图片描述"></p>
+<h3 id="9-对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？"><a href="#9-对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？" class="headerlink" title="9. 对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？"></a>9. 对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？</h3><ul>
+<li>选择明文攻击（CPA）。攻击者选择明文消息并得到解密服务，产生相应的明文，攻击者通过得到的明密文对来降低目标密码体制的安全性。</li>
+<li>选择密文攻击（CCA）。攻击者选择密文消息并得到解密服务，产生相应的明文。攻击者用所得到的明密文对来降低目标密码体制的安全性。在解密服务停止后，即在得到目标密文之后，解密服务立即停止。如果攻击者能够从“目标密文”中得到保密明文的信息，则就说攻击是成功的。</li>
+<li>适应性选择明文攻击（CCA2）。这是一种CCA，而且除了对“目标密文”解密外，永远能够得到解密服务。</li>
+</ul>
+<h3 id="10-了解中国的商用公钥密码算法SM2。"><a href="#10-了解中国的商用公钥密码算法SM2。" class="headerlink" title="10. 了解中国的商用公钥密码算法SM2。"></a>10. 了解中国的商用公钥密码算法SM2。</h3><p>SM2特点</p>
+<ul>
+<li>一组基于<strong>椭圆曲线</strong>的公钥密码算法</li>
+<li>包含加<strong>解密算法、数字签名算法和密钥交换协议</strong></li>
+<li>采取了检错措施，提高了系统的数据完整性和可靠性<br> 推荐使用<strong>256位</strong>素数域上的椭圆曲线<br> 涉及<strong>3类</strong>辅助函数：杂凑函数、密钥派生函数、随机数发生器</li>
+</ul>
+<h2 id="第6章-消息认证与杂凑函数"><a href="#第6章-消息认证与杂凑函数" class="headerlink" title="第6章 消息认证与杂凑函数"></a>第6章 消息认证与杂凑函数</h2><h3 id="1-请说明Hash函数与加密函数有何不同？"><a href="#1-请说明Hash函数与加密函数有何不同？" class="headerlink" title="1. 请说明Hash函数与加密函数有何不同？"></a>1. 请说明Hash函数与加密函数有何不同？</h3><p>Hash函数不可逆，加密函数可逆。</p>
+<h3 id="2-杂凑函数具有哪些性质？"><a href="#2-杂凑函数具有哪些性质？" class="headerlink" title="2. 杂凑函数具有哪些性质？"></a>2. 杂凑函数具有哪些性质？</h3><ul>
+<li>单向性。</li>
+<li>任意长度输入产生定长输出。</li>
+<li>抗原像攻击</li>
+<li>抗碰撞攻击</li>
+</ul>
+<h3 id="3-什么是消息认证码MAC？如何构造？"><a href="#3-什么是消息认证码MAC？如何构造？" class="headerlink" title="3. 什么是消息认证码MAC？如何构造？"></a>3. 什么是消息认证码MAC？如何构造？</h3><p>MAC是<strong>有密钥</strong>参与杂凑运算的算法，也称密码校验和</p>
+<p>构造方法： M A C = H ( m ∣ ∣ k ) MAC = H(m||k) MAC=H(m∣∣k)。</p>
+<h3 id="4-在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）"><a href="#4-在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）" class="headerlink" title="4. 在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）"></a>4. 在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）</h3><ul>
+<li>穷举</li>
+<li>构造</li>
+<li>碰撞</li>
+<li>差分分析</li>
+<li>密码分析</li>
+</ul>
+<h3 id="5-如何采用Hash函数和分组加密算法构造MAC？"><a href="#5-如何采用Hash函数和分组加密算法构造MAC？" class="headerlink" title="5. 如何采用Hash函数和分组加密算法构造MAC？"></a>5. 如何采用Hash函数和分组加密算法构造MAC？</h3><p>Hash函数构造方法： M A C = H ( m ∣ ∣ k ) MAC = H(m||k) MAC=H(m∣∣k)。<br>分组加密算法构造方法：对消息 m m m进行分组并填充为 l l l个组，设 C 0 = I V C_0=IV C0​=IV为随机初始向量，发送者用CBC加密： C i ← E k ( m i ⊕ C i − 1 ) C_i\gets E_k(m_i \oplus C_{i-1}) Ci​←Ek​(mi​⊕Ci−1​)，数值对 ( I V , C l ) (IV,C_l) (IV,Cl​)作为 M M M的MAC。</p>
+<h3 id="6-什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。"><a href="#6-什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。" class="headerlink" title="6. 什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。"></a>6. 什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。</h3><p>MDC是无密钥控制的单向杂凑函数，其杂凑值只是输入字串的函数，任何人都可以计算。<br> 不同点：MDC不具有身份认证功能，MAC具有身份认证功能<br> 相同点：MDC 和MAC都可以检测接收数据的完整性</p>
+<h3 id="7-熟悉迭代杂凑函数的构造方法。"><a href="#7-熟悉迭代杂凑函数的构造方法。" class="headerlink" title="7. 熟悉迭代杂凑函数的构造方法。"></a>7. 熟悉迭代杂凑函数的构造方法。</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/6b013f1fc51307b5501f8365f5ea5d1c.png" alt="在这里插入图片描述"></p>
+<h3 id="8-MD5的明文输入分组长度、字长、输出长度是多少位？"><a href="#8-MD5的明文输入分组长度、字长、输出长度是多少位？" class="headerlink" title="8. MD5的明文输入分组长度、字长、输出长度是多少位？"></a>8. MD5的明文输入分组长度、字长、输出长度是多少位？</h3><h3 id="9-SHA-1的明文输入分组长度、字长、输出长度是多少位？"><a href="#9-SHA-1的明文输入分组长度、字长、输出长度是多少位？" class="headerlink" title="9. SHA-1的明文输入分组长度、字长、输出长度是多少位？"></a>9. SHA-1的明文输入分组长度、字长、输出长度是多少位？</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/182eec39aad5c8147ce245fef404e20b.png" alt="在这里插入图片描述"></p>
+<h3 id="10-掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。"><a href="#10-掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。" class="headerlink" title="10. 掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。"></a>10. 掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。</h3><p>既提供保密性，又提供消息认证：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/60f85a2f3b41de52f7e2237ebfa5374a.png" alt="在这里插入图片描述"><br> 仅仅提供消息认证：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/a93bdfc59f2985676cd2e285ac144464.png" alt="在这里插入图片描述"><br> 既提供消息认证，又提供数字签名<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/2422e6b28cc0b450755c4594565ab261.png" alt="在这里插入图片描述"><br> 既提供保密性，又提供消息认证和数字签名<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/9f21f6b8161c5b66cbc37929543fba3b.png" alt="在这里插入图片描述"><br> 仅提供消息认证<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/f7485ebadc4f0c79cc0daa989bc2ed24.png" alt="在这里插入图片描述"><br> 既提供保密性，又提供消息认证：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/689472a2bd587d1f5b5d2b8f8d04e168.png" alt="在这里插入图片描述"></p>
+<h3 id="11-熟悉中国商用杂凑函数SM3的构造。"><a href="#11-熟悉中国商用杂凑函数SM3的构造。" class="headerlink" title="11. 熟悉中国商用杂凑函数SM3的构造。"></a>11. 熟悉中国商用杂凑函数SM3的构造。</h3><p>见第8、9题图。<br> 构造Merkle-Damgard。</p>
+<h2 id="第7章-数字签名"><a href="#第7章-数字签名" class="headerlink" title="第7章 数字签名"></a>第7章 数字签名</h2><h3 id="1-数字签名应该具有哪些性质？"><a href="#1-数字签名应该具有哪些性质？" class="headerlink" title="1. 数字签名应该具有哪些性质？"></a>1. 数字签名应该具有哪些性质？</h3><ul>
+<li>收方能够确认或证实发放的签名，但不能伪造（R1）</li>
+<li>发方发出签名的消息给收方后，就不能再否认他所签发的消息（S）</li>
+<li>收方对已收到的签名消息不能否认，即有收报认证（R2）</li>
+<li>第三者可以确认收发双方之间的消息传送，但不能伪造这一过程（T）</li>
+</ul>
+<h3 id="2-数字签名可以分为哪几类？"><a href="#2-数字签名可以分为哪几类？" class="headerlink" title="2. 数字签名可以分为哪几类？"></a>2. 数字签名可以分为哪几类？</h3><p>确定性数字签名，随机化数字签名。</p>
+<h3 id="3-RSA签名是基于何种数学难题？"><a href="#3-RSA签名是基于何种数学难题？" class="headerlink" title="3. RSA签名是基于何种数学难题？"></a>3. RSA签名是基于何种数学难题？</h3><p>大整数分解难题。</p>
+<h3 id="4-ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。"><a href="#4-ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。" class="headerlink" title="4. ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。"></a>4. ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。</h3><p>基于离散对数难问题。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/30590844c2fd79097f4a154e15774170.png" alt="在这里插入图片描述"><br> <img src="https://i-blog.csdnimg.cn/blog_migrate/9f03b9e7577f16d0eb70d9dcc608569d.png" alt="在这里插入图片描述"></p>
+<h3 id="5-Schnorr签名与ElGamal签名有何不同？请比较两者的异同。"><a href="#5-Schnorr签名与ElGamal签名有何不同？请比较两者的异同。" class="headerlink" title="5. Schnorr签名与ElGamal签名有何不同？请比较两者的异同。"></a>5. Schnorr签名与ElGamal签名有何不同？请比较两者的异同。</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/86dbbb795774cca1983afded7c8f30e4.png" alt="在这里插入图片描述"><br> 相同点：都是基于离散对数难题构造，都是随机化数字签名。</p>
+<h3 id="6-请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。"><a href="#6-请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。" class="headerlink" title="6. 请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。"></a>6. 请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/1e2e92ef52bc690b4338a5978bd120a6.png" alt="在这里插入图片描述"><br> <img src="https://i-blog.csdnimg.cn/blog_migrate/f7daf398ad7ebf99cb9f386dea08196f.png" alt="在这里插入图片描述"><br> 不同点：<br> 相同点：都是基于离散对数难题构造，都是随机化数字签名。</p>
+<h3 id="7-在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。"><a href="#7-在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。" class="headerlink" title="7. 在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。"></a>7. 在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。</h3><p>可以通过2个使用相同随机数的签名解密出私钥。</p>
+<h3 id="8-Diffie-Hellman能用来做数字签名吗？"><a href="#8-Diffie-Hellman能用来做数字签名吗？" class="headerlink" title="8. Diffie-Hellman能用来做数字签名吗？"></a>8. Diffie-Hellman能用来做数字签名吗？</h3><p>不能。</p>
+<h3 id="9-单钥体制能用来做数字签名吗？"><a href="#9-单钥体制能用来做数字签名吗？" class="headerlink" title="9. 单钥体制能用来做数字签名吗？"></a>9. 单钥体制能用来做数字签名吗？</h3><p>不能。</p>
+<h3 id="10-试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。"><a href="#10-试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。" class="headerlink" title="10. 试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。"></a>10. 试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/6548373291176967b041f91d02a07461.png" alt="在这里插入图片描述"></p>
+<h3 id="11-请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？"><a href="#11-请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？" class="headerlink" title="11. 请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？"></a>11. 请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？</h3><ul>
+<li>不可否认签名：这类签名要求在签名者合作下才能验证签名。如果无签名者合作，这类签名不可验证，从而可以防止恶意的攻击者随意复制和散布签名者所签的文件。这一性质可以用于知识产权的保护等。</li>
+<li>防失败签名：是一种强安全性的数字签名，可防范有充足计算资源的攻击者。在分析出私钥的情况下，攻击者也难以伪造Alice的签名。签名者也难以对自己的签名进行抵赖。</li>
+<li>盲签名：签名者对一个文件做数字签名，但文件所有者不想让签名者知道文件的内容。可用于选举投票、数字货币协议、电子商务系统。</li>
+<li>群签名：只有群中的成员才能代表该群体进行数字签名。接收方用公钥验证群签名，但无法知道由群体中的哪个成员所签。发生争议时，由群体中的成员或可信赖机构识别群签名的签名者。可以用于项目投标。</li>
+<li>代理签名：代理签名就是委托人授权某个代理人进行的签名，在委托签名时，<br> 签名密钥不交给代理人。</li>
+<li>指定证实人签名：在一个机构中，指定一个人负责证实所有人的签名。任何成员的签名都具有不可否认性，但证实工作均由指定人完成。</li>
+<li>一次性数字签名：签名者至多只能对一个消息进行签名，否则签名就可能被伪造。</li>
+</ul>
+<h3 id="12-了解中国商用数字签名算法SM2。"><a href="#12-了解中国商用数字签名算法SM2。" class="headerlink" title="12. 了解中国商用数字签名算法SM2。"></a>12. 了解中国商用数字签名算法SM2。</h3><p>基于椭圆曲线上的离散对数难题</p>
+<h2 id="第8章-密码协议"><a href="#第8章-密码协议" class="headerlink" title="第8章 密码协议"></a>第8章 密码协议</h2><h3 id="1-构成协议的三个主要特征（含义）是什么？"><a href="#1-构成协议的三个主要特征（含义）是什么？" class="headerlink" title="1. 构成协议的三个主要特征（含义）是什么？"></a>1. 构成协议的三个主要特征（含义）是什么？</h3><ul>
+<li>有序性</li>
+<li>至少有两个参与者</li>
+<li>通过执行协议必须能完成某项任务<br> 注：网络协议的三要素：语法、语义、同步。</li>
+</ul>
+<h3 id="2-什么是仲裁协议？什么是裁决协议？什么是自执行协议？"><a href="#2-什么是仲裁协议？什么是裁决协议？什么是自执行协议？" class="headerlink" title="2. 什么是仲裁协议？什么是裁决协议？什么是自执行协议？"></a>2. 什么是仲裁协议？什么是裁决协议？什么是自执行协议？</h3><ul>
+<li>仲裁协议：存在公正的、各方均信赖的第三方作为仲裁者，帮助两个互不信赖的实体完成协议。</li>
+<li>裁决协议：可信赖第三方不直接参与协议，只有发生纠纷时，裁决人才执行协议。</li>
+<li>自执行协议：协议本身保证公平性，如果协议中一方试图欺骗，另一方能够立刻检测到欺骗的发生，并停止执行协议。</li>
+</ul>
+<h3 id="3-如果按照密码协议的功能分类，密码协议可以分为哪几类？"><a href="#3-如果按照密码协议的功能分类，密码协议可以分为哪几类？" class="headerlink" title="3. 如果按照密码协议的功能分类，密码协议可以分为哪几类？"></a>3. 如果按照密码协议的功能分类，密码协议可以分为哪几类？</h3><ul>
+<li>密钥建立协议</li>
+<li>认证建立协议</li>
+<li>认证的密钥建立协议</li>
+</ul>
+<h3 id="4-什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。"><a href="#4-什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。" class="headerlink" title="4. 什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。"></a>4. 什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。</h3><p>攻击者拦截正常的网络通信数据，选择性的进行数据篡改和转发，而通信双发却毫不知情。<br> Mallory不仅能够窃听A和B之间交换的信息，而且能够修改消息，删除消息，甚至生成全新的消息。当B与A会话时，M可以冒充B，当A与B会话时，M可以冒充A。</p>
+<h3 id="5-DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？"><a href="#5-DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？" class="headerlink" title="5. DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？"></a>5. DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？</h3><p>DH不抵抗中间人攻击的本质原因：通信双方没有进行<strong>实体认证</strong>。<br> 改造DH：将公钥向CA请求证书，将证书发送给对方。</p>
+<h3 id="6-Diffie-Hellman能用来做数字签名吗？"><a href="#6-Diffie-Hellman能用来做数字签名吗？" class="headerlink" title="6. Diffie-Hellman能用来做数字签名吗？"></a>6. Diffie-Hellman能用来做数字签名吗？</h3><p>不能。</p>
+<h3 id="7-掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。"><a href="#7-掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。" class="headerlink" title="7. 掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。"></a>7. 掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。</h3><p>大嘴青蛙协议：A和B均与T共享一个密钥，只需要传两条消息，就可以将一个会话密钥发送给B。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/c0c786bfcc03d0d4ef16d9d89f24a51b.png" alt="在这里插入图片描述"><br> Yahalom ：B首先与T接触，而T仅向A发送一条消息。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/d4e2631e4e908c89b8a43f95f513b31b.png" alt="在这里插入图片描述"><br> Kerberos ：A和B均与T共享一个密钥，采用时戳。会话密钥由A生成。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/934706742ac66310b6c9eddbe8533a11.png" alt="在这里插入图片描述"></p>
+<h3 id="8-请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？"><a href="#8-请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？" class="headerlink" title="8. 请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？"></a>8. 请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/970c2083b2e3c6219f31283a8a708b7c.png" alt="在这里插入图片描述"><br> （本题的意思最开始并不理解，实际上协议的目的在密钥协商后进行认证。假设已经攻击成功，希望这一协议能够发现受到攻击，当然在题目中是不行的）<br> 假设中间人已经实施了攻击，通过与A、B的密钥进行加密和解密，可以伪造出消息，A、B仍不知情。<br> （假如两方满足课本中的“涉及某种秘密”，如共享密钥或时钟，就可以引入秘密，但不包含在消息中，那么就攻击者因为缺少秘密信息就无法重构消息）</p>
+<p>解决方法：数字签名，数字证书。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/e7dc9e5408249378df86195d5e143066.png" alt="在这里插入图片描述"></p>
+<h3 id="9-对密码协议的攻击方法有哪些？"><a href="#9-对密码协议的攻击方法有哪些？" class="headerlink" title="9. 对密码协议的攻击方法有哪些？"></a>9. 对密码协议的攻击方法有哪些？</h3><ul>
+<li>已知明文攻击</li>
+<li>选择密文攻击</li>
+<li>预言者会话攻击</li>
+<li>并行会话攻击</li>
+</ul>
+<h3 id="10-密码协议的安全性分析的常用方法有哪些？"><a href="#10-密码协议的安全性分析的常用方法有哪些？" class="headerlink" title="10. 密码协议的安全性分析的常用方法有哪些？"></a>10. 密码协议的安全性分析的常用方法有哪些？</h3><ul>
+<li>攻击检验方法</li>
+<li>形式语言逻辑证明</li>
+<li>可证明安全分析</li>
+</ul>
+<h2 id="第9章-数字证书与公钥基础设施"><a href="#第9章-数字证书与公钥基础设施" class="headerlink" title="第9章 数字证书与公钥基础设施"></a>第9章 数字证书与公钥基础设施</h2><h3 id="1-什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？"><a href="#1-什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？" class="headerlink" title="1. 什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？"></a>1. 什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？</h3><p>PKI是一种遵循<strong>标准</strong>的利用<strong>公钥</strong>理论和技术建立的提供<strong>安全服务</strong>的基础设施。</p>
+<p>PKI由证书机构、注册机构、证书发布库、密钥备份与恢复、证书撤销、PKI应用接口组成。</p>
+<ul>
+<li>证书机构（CA）负责发放和管理数字证书。</li>
+<li>注册机构（RA）按照特定政策与管理规范对用户的<strong>资格</strong>进行<strong>审查</strong>，并执行“是否<strong>同意</strong>给该申请者发放证书、撤销证书”等操作，承担因审核错误而引起的一切后果。</li>
+<li>证书发布库是网上可供公众进行<strong>开放式查询</strong>的公共信息库。</li>
+<li>密钥备份与恢复提供密钥备份与恢复机制。</li>
+<li>证书撤销警告其他用户<strong>不要再使用</strong>该用户的公钥证书。</li>
+<li>PKI应用接口令用户能<strong>方便地使用</strong>加密、数字签名等安全服务。</li>
+</ul>
+<p>2、什么是数字证书？一个数字证书包含哪些内容？</p>
+<p>数字证书就是一个用户的<strong>身份</strong>与其所持有的<strong>公钥</strong>的结合，在结合之前由一个可信任的<strong>权威机构CA</strong>来证实用户的身份，然后由该机构对用户身份及对应公钥相结合的证书进行<strong>数字签名</strong>，以证明其证书的有效性。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/01a28b435d1e38a1fef57ffb8cce9d1a.png" alt="在这里插入图片描述"></p>
+<h3 id="3-了解X-509标准规定的数字证书的格式。"><a href="#3-了解X-509标准规定的数字证书的格式。" class="headerlink" title="3. 了解X.509标准规定的数字证书的格式。"></a>3. 了解X.509标准规定的数字证书的格式。</h3><p>版本号、证书序号、签名算法标识符、签名者、有效期（之前/之后）、主体名、主体公钥信息、签发者唯一标识符、主体唯一标识符、扩展信息、CA签名。</p>
+<h3 id="4-实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？"><a href="#4-实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？" class="headerlink" title="4. 实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？"></a>4. 实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？</h3><p>CA，CA的私钥进行签名，CA的公钥进行验证。</p>
+<h3 id="5-数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？"><a href="#5-数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？" class="headerlink" title="5. 数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？"></a>5. 数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？</h3><p>数字证书将用户身份和所持公钥进行绑定，可以证明<strong>网络实体</strong>在<strong>特定安全应用</strong>的相关信息。<br> 为了解决公钥可信性问题。</p>
+<h3 id="6-在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？"><a href="#6-在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？" class="headerlink" title="6. 在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？"></a>6. 在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？</h3><p>获取需验证的证书的证书链，依次获取上一级证书的公钥验证证书的签名，直至到可信任的根节点CA。</p>
+<h3 id="7-什么是交叉证书？"><a href="#7-什么是交叉证书？" class="headerlink" title="7. 什么是交叉证书？"></a>7. 什么是交叉证书？</h3><p>交叉证书可以让不同PKI域的根CA进行交叉认证，从而解决根CA不同的信任问题</p>
+<h3 id="8-如何实现数字证书的撤销？如何实现数字证书的在线查询？"><a href="#8-如何实现数字证书的撤销？如何实现数字证书的在线查询？" class="headerlink" title="8. 如何实现数字证书的撤销？如何实现数字证书的在线查询？"></a>8. 如何实现数字证书的撤销？如何实现数字证书的在线查询？</h3><p>维护证书撤销列表（CRL）或是执行联机证书状态协议，对证书的撤销状态进行检查。</p>
+<p>客户机向OCSP响应器发送联机证书状态查询请求（OCSP Request），检查该证书是否撤销</p>
+<p>OCSP响应器查询服务器的X.500目录，以明确特定证书是否有效</p>
+<p>根据查找的状态检查结构，OCSP响应器向客户机发送数字签名的OCSP响应</p>
+<h3 id="9-什么是漫游证书？简述其基本工作原理。"><a href="#9-什么是漫游证书？简述其基本工作原理。" class="headerlink" title="9. 什么是漫游证书？简述其基本工作原理。"></a>9. 什么是漫游证书？简述其基本工作原理。</h3><p>漫游证书是通过第三方软件提供的，允许用户访问自己的公私钥对。</p>
+<p>基本原理：</p>
+<p>（1）将数字证书和私钥存储于安全的中央服务器；</p>
+<p>（2）用户需要数字证书时，可向该服务器认证自己；</p>
+<p>（3）认证成功后，该服务器将证书和私钥发给用户；</p>
+<p>（4）当用户完成工作后，该软件自动删除证书和私钥。</p>
+<h3 id="10-一个PKI-CA数字证书系统由哪几部分构成？"><a href="#10-一个PKI-CA数字证书系统由哪几部分构成？" class="headerlink" title="10. 一个PKI/CA数字证书系统由哪几部分构成？"></a>10. 一个PKI/CA数字证书系统由哪几部分构成？</h3><p>签发中心、密钥管理中心、注册系统、证书发布系统、在线证书状态查询系统。</p>
+<h2 id="第10章-网络加密与密钥管理"><a href="#第10章-网络加密与密钥管理" class="headerlink" title="第10章 网络加密与密钥管理"></a>第10章 网络加密与密钥管理</h2><h3 id="1-什么是链路加密？有什么优缺点？"><a href="#1-什么是链路加密？有什么优缺点？" class="headerlink" title="1. 什么是链路加密？有什么优缺点？"></a>1. 什么是链路加密？有什么优缺点？</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/eec5be5be47d741698fa9222a1b33b29.png" alt="在这里插入图片描述"></p>
+<p>优点：</p>
+<ul>
+<li>加密对用户是透明的，通过链路发送的任何信息在发送前都先被加密。</li>
+<li>每个链路只需要一对密钥。</li>
+<li>提供了信号流安全机制。</li>
+</ul>
+<p>缺点：数据在中间结点以明文形式出现，维护结点安全性的代价较高。</p>
+<h3 id="2-什么是节点加密？有什么优缺点？"><a href="#2-什么是节点加密？有什么优缺点？" class="headerlink" title="2. 什么是节点加密？有什么优缺点？"></a>2. 什么是节点加密？有什么优缺点？</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/2140c0fb2e59bf2604db98ac8b62026e.png" alt="在这里插入图片描述"><br> 优点：</p>
+<ul>
+<li>消息的加、解密在安全模块中进行，这使消息内容不会被泄密。</li>
+<li>加密对用户透明。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>某些信息（如报头和路由信息）必须以明文形式传输，可能遭到流量分析攻击。</li>
+<li>因为所有节点都必须有密钥，密钥分发和管理变的困难。</li>
+</ul>
+<p>3、什么是端到端加密？有什么优缺点？</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8d3e39aeb93fa24c8b22954f32fa22f6.png" alt="在这里插入图片描述"><br> 优点：</p>
+<ul>
+<li>对两个终端之间的整个通信线路进行加密。</li>
+<li>只需要2台加密机，1台在发端，1台在收端。</li>
+<li>从发端到收端的传输过程中，报文始终以密文存在。</li>
+<li>比链路和节点加密更安全可靠，更容易设计和维护。</li>
+</ul>
+<p>缺点：不能防止业务流分析攻击。</p>
+<p>4、什么是混合加密？有什么优缺点？</p>
+<p>混合加密的是链路和端到端混合加密组成。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/8f2410e0f48e920af9a67917390b5c90.png" alt="在这里插入图片描述"></p>
+<p>优点：从成本、灵活性和安全性来看，一般端到端加密方式较有吸引力。报文被两次加密，保护了报头的敏感信息，不会被业务流分析攻击。</p>
+<p>缺点：信息的安全设计较复杂，成本高，系统开销大。</p>
+<h3 id="5-什么是密钥管理？它包括哪些方面的管理？"><a href="#5-什么是密钥管理？它包括哪些方面的管理？" class="headerlink" title="5. 什么是密钥管理？它包括哪些方面的管理？"></a>5. 什么是密钥管理？它包括哪些方面的管理？</h3><p>密钥管理是处理密钥从产生到最终销毁的整个过程中的有关问题，包括系统的初始化及密钥的产生、存储、备份/恢复、装入、分配、保护、更新、控制、丢失、撤销和销毁等内容。</p>
+<h3 id="6-密钥有哪些种类？它们各自有什么用途？"><a href="#6-密钥有哪些种类？它们各自有什么用途？" class="headerlink" title="6. 密钥有哪些种类？它们各自有什么用途？"></a>6. 密钥有哪些种类？它们各自有什么用途？</h3><ul>
+<li>基本密钥或称初始密钥，是由用户选定或由系统分配、可在较长时间内由一对用户专用的密钥。其用途是与会话密钥一起去启动和控制某种算法所构造的密钥产生器，产生用于加密数据的密钥流。</li>
+<li>主机主密钥，作用是对密钥加密密钥进行加密的密钥，存储于主机处理器中。</li>
+<li>密钥加密密钥，用于对传送的会话或文件密钥进行加密时采用的密钥，也称为次主密钥、辅助密钥或密钥传送密钥。</li>
+<li>会话密钥，是两个通信终端用户在一次通话或交换数据时所用的密钥。</li>
+<li>数据加密密钥，也称工作密钥，在不增大更换密钥工作量的条件下扩大可使用的密钥量。</li>
+</ul>
+<h3 id="7-有哪些密钥分配的基本方法？"><a href="#7-有哪些密钥分配的基本方法？" class="headerlink" title="7. 有哪些密钥分配的基本方法？"></a>7. 有哪些密钥分配的基本方法？</h3><p>利用安全信道实现密钥传递</p>
+<p>利用双钥体制建立安全信道传递</p>
+<p>量子技术实现密钥传递</p>
+<h3 id="8-在用密钥枪注入密钥时，如何验证密钥注入的正确性？"><a href="#8-在用密钥枪注入密钥时，如何验证密钥注入的正确性？" class="headerlink" title="8. 在用密钥枪注入密钥时，如何验证密钥注入的正确性？"></a>8. 在用密钥枪注入密钥时，如何验证密钥注入的正确性？</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/bc73281708c95e846129ac14fe734f1b.png" alt="在这里插入图片描述"></p>
+<h3 id="9-密钥管理为什么要将密钥划分成不同的层次？"><a href="#9-密钥管理为什么要将密钥划分成不同的层次？" class="headerlink" title="9. 密钥管理为什么要将密钥划分成不同的层次？"></a>9. 密钥管理为什么要将密钥划分成不同的层次？</h3><p>保证极少数密钥以明文形式存储在有严密物理保护的主机密码器件中，其他密钥则以加密后的密文形式存于密码器之外的存储器中，因而大大简化了密钥管理，并增强了密钥的安全性。</p>
+<h3 id="10-一个密钥管理系统由哪几部分构成？（本题没找到）"><a href="#10-一个密钥管理系统由哪几部分构成？（本题没找到）" class="headerlink" title="10. 一个密钥管理系统由哪几部分构成？（本题没找到）"></a>10. 一个密钥管理系统由哪几部分构成？（本题没找到）</h3><p>密钥的产生、密钥的存储、密钥的备份与恢复、密钥的更新、密钥的销毁与撤销。</p>
+<h3 id="11-密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。"><a href="#11-密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。" class="headerlink" title="11. 密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。"></a>11. 密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。</h3><p>四个阶段：</p>
+<ul>
+<li>预运行阶段</li>
+<li>运行阶段</li>
+<li>后运行阶段</li>
+<li>报废阶段</li>
+</ul>
+<p>12个工作步骤：用户注册、用户初始化、密钥生成、密钥输入、密钥注册、正常使用、密钥备份、密钥更新、密钥档案、密钥注销与销毁、密钥恢复、密钥吊销</p>
+<h3 id="12-查找资料，了解一个好的密钥应具备哪些数学特性？"><a href="#12-查找资料，了解一个好的密钥应具备哪些数学特性？" class="headerlink" title="12. 查找资料，了解一个好的密钥应具备哪些数学特性？"></a>12. 查找资料，了解一个好的密钥应具备哪些数学特性？</h3><ul>
+<li>真正随机、等概率</li>
+<li>避免使用特定算法的弱密钥</li>
+<li>满足一定的数学关系</li>
+<li>易记而难猜中</li>
+<li>采用密钥揉搓或杂凑技术，将易记的长句子经单向杂凑函数变换成伪随机数串</li>
+</ul>
+<h2 id="第11章-无线网络安全"><a href="#第11章-无线网络安全" class="headerlink" title="第11章 无线网络安全"></a>第11章 无线网络安全</h2><h3 id="1-无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。"><a href="#1-无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。" class="headerlink" title="1. 无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。"></a>1. 无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。</h3><p>被动攻击：窃听，服务区标识符泄露</p>
+<p>主动攻击：通信阻断，数据的注入和篡改，中间人攻击，客户端假冒，接入点伪装，匿名攻击，客户端对客户端的攻击，隐匿无线信道，重放攻击。</p>
+<h3 id="2-GSM系统有哪些主要安全缺陷？"><a href="#2-GSM系统有哪些主要安全缺陷？" class="headerlink" title="2. GSM系统有哪些主要安全缺陷？"></a>2. GSM系统有哪些主要安全缺陷？</h3><ul>
+<li>首次开机时泄漏IMSI信息，可能导致用户身份泄露。</li>
+<li>基站对用户实施单向认证，伪基站向用户发送欺诈信息。</li>
+<li>骨干网数据传输无加密，中间节点可截获会话密钥。</li>
+<li>无数据完整性验证机制，不能检测数据是否被篡改。</li>
+<li>K直接参与认证与加密，存在泄露主密钥的风险。</li>
+<li>主密钥K存在SIM卡中，有复制SIM卡的风险。</li>
+</ul>
+<h3 id="3-3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？"><a href="#3-3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？" class="headerlink" title="3. 3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？"></a>3. 3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？</h3><p>实现了用户网络间的双向认证，建立了用户网络间的会话密钥，保持了会话密钥的新鲜性，增加了数据完整性验证功能。</p>
+<p>缺陷：</p>
+<ul>
+<li>首次开机时泄漏IMSI信息，可能导致用户身份泄露</li>
+<li>骨干网数据传输无加密，中间节点可截获会话密钥</li>
+<li>K直接参与认证与加密，主密钥缺少层次化保护</li>
+<li>CK和IK直接传输，存在被窃听的风险</li>
+<li>主密钥K存在SIM卡中，有复制SIM卡的风险</li>
+<li>采用10种安全算法  f1​∼f10​ ，算法过多存在被攻破的风险</li>
+</ul>
+<h3 id="4-4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比，-4G作出了哪些安全性改进？"><a href="#4-4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比，-4G作出了哪些安全性改进？" class="headerlink" title="4. 4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比， 4G作出了哪些安全性改进？"></a>4. 4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比， 4G作出了哪些安全性改进？</h3><p>实现了用户网络间的双向认证，建立了用户网络间的会话密钥，增加了数据完整性验证，实现了层次化密钥管理，隐藏了加密密钥C K CKCK和完整性验证密钥I K IKIK</p>
+<p>缺陷：</p>
+<ul>
+<li>首次开机时泄漏IMSI信息 可能导致用户身份泄露</li>
+<li>骨干网数据传输无加密 中间节点可截获会话密钥</li>
+</ul>
+<p>改进与功能如下：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/88aaa9b75f7784b23eff4807856a5fa9.png" alt="在这里插入图片描述"></p>
+<h3 id="5-请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。"><a href="#5-请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。" class="headerlink" title="5. 请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。"></a>5. 请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。</h3><p>三元组认证向量</p>
+<p>RAND：用于用户认证和会话密钥的产生时的挑战值。</p>
+<p>SRES′：用于VLR进行用户认证时与用户传输的认证响应SRES比较。</p>
+<p>Kc​：会话密钥，用于加密会话数据。</p>
+<h3 id="6-请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。"><a href="#6-请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。" class="headerlink" title="6. 请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。"></a>6. 请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/e84b5223cbeff614da0282313ccb160d.png" alt="在这里插入图片描述">  </p>
+<p>RAND：用于用户和网络双向认证和会话密钥的产生</p>
+<p>XRES：用于网络对用户的认证<br>CK：数据加密密钥</p>
+<p>IK：完整性验证密钥</p>
+<p>AUTN：用于用户对网络的认证</p>
+<h3 id="7-为何2G-3G-4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。"><a href="#7-为何2G-3G-4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。" class="headerlink" title="7. 为何2G/3G/4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。"></a>7. 为何2G/3G/4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。</h3><p>常数存在安全问题，随机数可以保持密钥的新鲜性。挑战值是随机数可以防止强力攻击，一个128b的随机数意味着3.4*1038 种可能的组合，即使一个黑客知道A3算法，猜出有效的RAND/SRES的可能性也非常小。</p>
+<p>重放攻击，会话密钥的攻破，设备的伪装等等。</p>
+<h3 id="8-与2G-3G-4G相比，5G在哪些方面提升了安全性？"><a href="#8-与2G-3G-4G相比，5G在哪些方面提升了安全性？" class="headerlink" title="8. 与2G/3G/4G相比，5G在哪些方面提升了安全性？"></a>8. 与2G/3G/4G相比，5G在哪些方面提升了安全性？</h3><p>增加了用户身份标识保护，实现了用户网络间的双向认证，建立了用户网络间的会话密钥和数据完整性验证密钥，实现了层次化密钥管理，隐藏了加密密钥CK和完整性验证密钥</p>
+<p><a href="">原文链接：https://blog.csdn.net/d18373144/article/details/127758475</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Ranuy 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Ranuy 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%8C%97%E8%88%AA/" rel="tag"><i class="fa fa-tag"></i> 北航</a>
+          
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"><i class="fa fa-tag"></i> 网络安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/7edf2b73.html" rel="next" title="IP地址划分">
+                <i class="fa fa-chevron-left"></i> IP地址划分
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.gif"
+                alt="Ranuy" />
+            
+              <p class="site-author-name" itemprop="name">Ranuy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/php00py" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/weixin_43886632" target="_blank" title="CSDn">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDn</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.t00ls.net/" title="TOOLS" target="_blank">TOOLS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.shentoushi.top/" title="渗透师" target="_blank">渗透师</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.chabug.org/" title="chaBug安全" target="_blank">chaBug安全</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.secshi.com/" title="安全师" target="_blank">安全师</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnhonkerarmy.com/forum.php" title="红盟社区" target="_blank">红盟社区</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/CHYbeta/Web-Security-Learning" title="web安全学习" target="_blank">web安全学习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/hongriSec/Web-Security-Attack" title="web安全攻防" target="_blank">web安全攻防</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#北航网络空间安全复习资料"><span class="nav-number">1.</span> <span class="nav-text">北航网络空间安全复习资料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络空间安全复习资料"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">网络空间安全复习资料</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第1章-引言"><span class="nav-number">1.1.</span> <span class="nav-text">第1章 引言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-掌握信息安全的四个目标？"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 掌握信息安全的四个目标？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-信息系统中常见的威胁有哪些？"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 信息系统中常见的威胁有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是安全策略？安全策略分几个等级？"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 什么是安全策略？安全策略分几个等级？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-什么是访问控制策略？它分为哪两类？有何不同？"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 什么是访问控制策略？它分为哪两类？有何不同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安全攻击分几大类？常见的攻击形式有哪些？"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. 安全攻击分几大类？常见的攻击形式有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-熟记X-800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。"><span class="nav-number">1.1.6.</span> <span class="nav-text">6. 熟记X.800标准中的5类安全服务和8种特定安全机制，并简述安全服务和安全机制之间的关系。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-能够理解并画出网络安全模型和网络访问模型。"><span class="nav-number">1.1.7.</span> <span class="nav-text">7. 能够理解并画出网络安全模型和网络访问模型。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2章-计算机网络基础"><span class="nav-number">1.2.</span> <span class="nav-text">第2章 计算机网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-熟记OSI的七层参考模型、TCP-IP的四层模型。"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 熟记OSI的七层参考模型、TCP&#x2F;IP的四层模型。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是面向连接的服务？什么是无连接的服务？"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 什么是面向连接的服务？什么是无连接的服务？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-必须知道IPv4及IPv6地址的格式及长度。"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 必须知道IPv4及IPv6地址的格式及长度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-必须知道MAC地址的长度。"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 必须知道MAC地址的长度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-IP地址与MAC地址转换靠哪个网络协议？"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. IP地址与MAC地址转换靠哪个网络协议？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. IPv4的地址分类有哪几种？给定一个IP地址，要能够分析判断出该地址属于哪一类地址。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-给定一个IPv4地址和子网掩码，要求能够计算出网络地址。"><span class="nav-number">1.2.7.</span> <span class="nav-text">7. 给定一个IPv4地址和子网掩码，要求能够计算出网络地址。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-熟悉CIDR的表示方式，如：128-14-32-0-20表示的地址块范围和子网掩码是什么？"><span class="nav-number">1.2.8.</span> <span class="nav-text">8. 熟悉CIDR的表示方式，如：128.14.32.0&#x2F;20表示的地址块范围和子网掩码是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-什么是端口号？端口号在网络通信中起什么作用？"><span class="nav-number">1.2.9.</span> <span class="nav-text">9. 什么是端口号？端口号在网络通信中起什么作用？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3章-Internet协议的安全性"><span class="nav-number">1.3.</span> <span class="nav-text">第3章 Internet协议的安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-熟记http-ftp-telnet-pop3-smtp-imap-ssh-dns等常用通信协议的功能。"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 熟记http&#x2F;ftp&#x2F;telnet&#x2F;pop3&#x2F;smtp&#x2F;imap&#x2F;ssh&#x2F;dns等常用通信协议的功能。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-熟记一些常用网络协议的端口号。"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 熟记一些常用网络协议的端口号。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. 网际层协议有哪些？传输层协议有哪些？应用层协议有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-为什么要进行网络地址转换（NAT）"><span class="nav-number">1.3.4.</span> <span class="nav-text">4. 为什么要进行网络地址转换（NAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-ARP协议的作用是什么？"><span class="nav-number">1.3.5.</span> <span class="nav-text">5. ARP协议的作用是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-为什么UDP比TCP协议更加容易遭到攻击？"><span class="nav-number">1.3.6.</span> <span class="nav-text">6. 为什么UDP比TCP协议更加容易遭到攻击？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-IMAP与POP3协议相比，它的安全性有那些提升？"><span class="nav-number">1.3.7.</span> <span class="nav-text">7. IMAP与POP3协议相比，它的安全性有那些提升？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-SSH与Telnet协议相比，它的安全性有那些提升？"><span class="nav-number">1.3.8.</span> <span class="nav-text">8. SSH与Telnet协议相比，它的安全性有那些提升？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-什么是ICMP重定向攻击？如何防止此类攻击？"><span class="nav-number">1.3.9.</span> <span class="nav-text">9. 什么是ICMP重定向攻击？如何防止此类攻击？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？"><span class="nav-number">1.3.10.</span> <span class="nav-text">10. 在网络中，为什么不能仅仅靠识别数据包的IP地址，来判断一个数据包就是来自该IP地址的主机？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4章-单钥密码体制"><span class="nav-number">1.4.</span> <span class="nav-text">第4章 单钥密码体制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-按照对明文消息的处理方式不同，单钥体制可分为哪两类？"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 按照对明文消息的处理方式不同，单钥体制可分为哪两类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-古典密码中的两个常用的变换是什么？"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. 古典密码中的两个常用的变换是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？"><span class="nav-number">1.4.3.</span> <span class="nav-text">3. 什么是理论上安全？什么是计算上安全？理论上安全的密码算法有几个？理论上安全的密码是什么密码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-什么是同步流密码、自同步流密码？流密码的安全性取决于什么？"><span class="nav-number">1.4.4.</span> <span class="nav-text">4. 什么是同步流密码、自同步流密码？流密码的安全性取决于什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？"><span class="nav-number">1.4.5.</span> <span class="nav-text">5. DES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？DES的非线性变换是什么变换？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？"><span class="nav-number">1.4.6.</span> <span class="nav-text">6. AES分组长度、密钥长度、轮数是多少？1轮加密包括哪些变换？AES的非线性变换是什么变换？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？"><span class="nav-number">1.4.7.</span> <span class="nav-text">7. 加密轮数是否越多越好？密钥是否越长越好？将2个算法串联对数据加密，是否一定更安全？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。"><span class="nav-number">1.4.8.</span> <span class="nav-text">8. 分组密码的5种工作模式是什么？能画出5种工作模式的原理框图。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？"><span class="nav-number">1.4.9.</span> <span class="nav-text">9. 分析5种加密模式中，哪些加密模式没有误码扩展？哪些有误码扩展？如果有误码扩展，会影响几个分组？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。"><span class="nav-number">1.4.10.</span> <span class="nav-text">10. 了解中国商用分组密码算法SM4，知道它的分组长度、密钥长度和加密轮数。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5章-双钥密码体制"><span class="nav-number">1.5.</span> <span class="nav-text">第5章 双钥密码体制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？"><span class="nav-number">1.5.1.</span> <span class="nav-text">1. 双钥密码体制是基于数学难题构造的，请列举出目前存在的数学难题。用双钥体制加密时采用谁的公钥？解密时采用谁的公钥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？"><span class="nav-number">1.5.2.</span> <span class="nav-text">2. RSA是基于何种数学难题构造的？Diffie-Hellman是基于何种数学难题构造的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算"><span class="nav-number">1.5.3.</span> <span class="nav-text">3. 请写出RSA加密和解密的数学表达式，并指出什么是公钥，什么是私钥？并能做简单的加密和解密计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-RSA在各种参数选择上有哪些原则和限制？为什么？"><span class="nav-number">1.5.4.</span> <span class="nav-text">4. RSA在各种参数选择上有哪些原则和限制？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？"><span class="nav-number">1.5.5.</span> <span class="nav-text">5. 写出ELGamal密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？"><span class="nav-number">1.5.6.</span> <span class="nav-text">6. ECC公钥密码体制是基于何种数学难题？请写出他的加密表达式和解密表达式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-写出基于ECC的Diffie-Hellman密钥交换协议。"><span class="nav-number">1.5.7.</span> <span class="nav-text">7. 写出基于ECC的Diffie-Hellman密钥交换协议。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。"><span class="nav-number">1.5.8.</span> <span class="nav-text">8. RSA和ECC公钥密码算法在加密、解密速度上有何差异？请查阅资料，比较它们分别采用硬件和软件实现时的加密和解密速度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？"><span class="nav-number">1.5.9.</span> <span class="nav-text">9. 对公钥密码的攻击有哪些常见的攻击方式？它们各有什么特点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-了解中国的商用公钥密码算法SM2。"><span class="nav-number">1.5.10.</span> <span class="nav-text">10. 了解中国的商用公钥密码算法SM2。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6章-消息认证与杂凑函数"><span class="nav-number">1.6.</span> <span class="nav-text">第6章 消息认证与杂凑函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-请说明Hash函数与加密函数有何不同？"><span class="nav-number">1.6.1.</span> <span class="nav-text">1. 请说明Hash函数与加密函数有何不同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-杂凑函数具有哪些性质？"><span class="nav-number">1.6.2.</span> <span class="nav-text">2. 杂凑函数具有哪些性质？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是消息认证码MAC？如何构造？"><span class="nav-number">1.6.3.</span> <span class="nav-text">3. 什么是消息认证码MAC？如何构造？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）"><span class="nav-number">1.6.4.</span> <span class="nav-text">4. 在不知道密钥的情况下，如何对MAC算法成功实施攻击？（167页）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-如何采用Hash函数和分组加密算法构造MAC？"><span class="nav-number">1.6.5.</span> <span class="nav-text">5. 如何采用Hash函数和分组加密算法构造MAC？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。"><span class="nav-number">1.6.6.</span> <span class="nav-text">6. 什么是消息检测码（或消息摘要）MDC？简述MDC与MAC的异同。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-熟悉迭代杂凑函数的构造方法。"><span class="nav-number">1.6.7.</span> <span class="nav-text">7. 熟悉迭代杂凑函数的构造方法。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-MD5的明文输入分组长度、字长、输出长度是多少位？"><span class="nav-number">1.6.8.</span> <span class="nav-text">8. MD5的明文输入分组长度、字长、输出长度是多少位？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-SHA-1的明文输入分组长度、字长、输出长度是多少位？"><span class="nav-number">1.6.9.</span> <span class="nav-text">9. SHA-1的明文输入分组长度、字长、输出长度是多少位？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。"><span class="nav-number">1.6.10.</span> <span class="nav-text">10. 掌握应用杂凑函数的基本方式，熟悉图6-1、图6-2、图6-5、图6-6几个图所能够提供的安全功能。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-熟悉中国商用杂凑函数SM3的构造。"><span class="nav-number">1.6.11.</span> <span class="nav-text">11. 熟悉中国商用杂凑函数SM3的构造。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7章-数字签名"><span class="nav-number">1.7.</span> <span class="nav-text">第7章 数字签名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数字签名应该具有哪些性质？"><span class="nav-number">1.7.1.</span> <span class="nav-text">1. 数字签名应该具有哪些性质？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数字签名可以分为哪几类？"><span class="nav-number">1.7.2.</span> <span class="nav-text">2. 数字签名可以分为哪几类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-RSA签名是基于何种数学难题？"><span class="nav-number">1.7.3.</span> <span class="nav-text">3. RSA签名是基于何种数学难题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。"><span class="nav-number">1.7.4.</span> <span class="nav-text">4. ElGamal签名是基于何种数学难题？请写出ElGamal的签名方程。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Schnorr签名与ElGamal签名有何不同？请比较两者的异同。"><span class="nav-number">1.7.5.</span> <span class="nav-text">5. Schnorr签名与ElGamal签名有何不同？请比较两者的异同。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。"><span class="nav-number">1.7.6.</span> <span class="nav-text">6. 请写出DSS的签名方程，并比较它与ElGamal、Schnorr的异同。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。"><span class="nav-number">1.7.7.</span> <span class="nav-text">7. 在以上三种签名方案中，每次签名时，用户都要选择一个随机数k。若将随机数k替换成为常数，会出现什么安全问题？请加以分析。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Diffie-Hellman能用来做数字签名吗？"><span class="nav-number">1.7.8.</span> <span class="nav-text">8. Diffie-Hellman能用来做数字签名吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-单钥体制能用来做数字签名吗？"><span class="nav-number">1.7.9.</span> <span class="nav-text">9. 单钥体制能用来做数字签名吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。"><span class="nav-number">1.7.10.</span> <span class="nav-text">10. 试比较数字签名在密钥的使用上，与公钥加密算法存在的区别。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？"><span class="nav-number">1.7.11.</span> <span class="nav-text">11. 请列举具有特殊功能的数字签名体制有哪些？它们各有什么用途？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-了解中国商用数字签名算法SM2。"><span class="nav-number">1.7.12.</span> <span class="nav-text">12. 了解中国商用数字签名算法SM2。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第8章-密码协议"><span class="nav-number">1.8.</span> <span class="nav-text">第8章 密码协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-构成协议的三个主要特征（含义）是什么？"><span class="nav-number">1.8.1.</span> <span class="nav-text">1. 构成协议的三个主要特征（含义）是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是仲裁协议？什么是裁决协议？什么是自执行协议？"><span class="nav-number">1.8.2.</span> <span class="nav-text">2. 什么是仲裁协议？什么是裁决协议？什么是自执行协议？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如果按照密码协议的功能分类，密码协议可以分为哪几类？"><span class="nav-number">1.8.3.</span> <span class="nav-text">3. 如果按照密码协议的功能分类，密码协议可以分为哪几类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。"><span class="nav-number">1.8.4.</span> <span class="nav-text">4. 什么是中间人攻击？如何对Diffie-Hellman协议进行中间人攻击？请用画图分析对Diffie-Hellman协议进行中间人攻击的详细过程。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？"><span class="nav-number">1.8.5.</span> <span class="nav-text">5. DH协议不能抵抗中间人攻击的本质原因是什么？如何改造DH协议，可以抵抗中间人攻击？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Diffie-Hellman能用来做数字签名吗？"><span class="nav-number">1.8.6.</span> <span class="nav-text">6. Diffie-Hellman能用来做数字签名吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。"><span class="nav-number">1.8.7.</span> <span class="nav-text">7. 掌握大嘴青蛙协议、Yahalom、Kerberos协议安全协议设计的思想。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？"><span class="nav-number">1.8.8.</span> <span class="nav-text">8. 请画图分析第218页的SKID协议为什么不能抵抗中间人攻击？如何改造这个协议，可以有效抵抗中间人攻击？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-对密码协议的攻击方法有哪些？"><span class="nav-number">1.8.9.</span> <span class="nav-text">9. 对密码协议的攻击方法有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-密码协议的安全性分析的常用方法有哪些？"><span class="nav-number">1.8.10.</span> <span class="nav-text">10. 密码协议的安全性分析的常用方法有哪些？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9章-数字证书与公钥基础设施"><span class="nav-number">1.9.</span> <span class="nav-text">第9章 数字证书与公钥基础设施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？"><span class="nav-number">1.9.1.</span> <span class="nav-text">1. 什么是PKI？PKI由哪几部分组成？每个组成部分的作用是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-了解X-509标准规定的数字证书的格式。"><span class="nav-number">1.9.2.</span> <span class="nav-text">3. 了解X.509标准规定的数字证书的格式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？"><span class="nav-number">1.9.3.</span> <span class="nav-text">4. 实际中，由谁来签发证书？签发证书时，是由谁的何种密钥（私钥还是公钥）进行签名？验证证书时，是用谁的何种密钥来验证？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？"><span class="nav-number">1.9.4.</span> <span class="nav-text">5. 数字证书的作用是什么？它本质上是为解决网络安全中的何种问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？"><span class="nav-number">1.9.5.</span> <span class="nav-text">6. 在实际应用中，若采用层次化的CA架构，如何实现两个位于不同子CA中的用户之间的数字证书验证？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-什么是交叉证书？"><span class="nav-number">1.9.6.</span> <span class="nav-text">7. 什么是交叉证书？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-如何实现数字证书的撤销？如何实现数字证书的在线查询？"><span class="nav-number">1.9.7.</span> <span class="nav-text">8. 如何实现数字证书的撤销？如何实现数字证书的在线查询？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-什么是漫游证书？简述其基本工作原理。"><span class="nav-number">1.9.8.</span> <span class="nav-text">9. 什么是漫游证书？简述其基本工作原理。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-一个PKI-CA数字证书系统由哪几部分构成？"><span class="nav-number">1.9.9.</span> <span class="nav-text">10. 一个PKI&#x2F;CA数字证书系统由哪几部分构成？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10章-网络加密与密钥管理"><span class="nav-number">1.10.</span> <span class="nav-text">第10章 网络加密与密钥管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是链路加密？有什么优缺点？"><span class="nav-number">1.10.1.</span> <span class="nav-text">1. 什么是链路加密？有什么优缺点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是节点加密？有什么优缺点？"><span class="nav-number">1.10.2.</span> <span class="nav-text">2. 什么是节点加密？有什么优缺点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-什么是密钥管理？它包括哪些方面的管理？"><span class="nav-number">1.10.3.</span> <span class="nav-text">5. 什么是密钥管理？它包括哪些方面的管理？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-密钥有哪些种类？它们各自有什么用途？"><span class="nav-number">1.10.4.</span> <span class="nav-text">6. 密钥有哪些种类？它们各自有什么用途？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-有哪些密钥分配的基本方法？"><span class="nav-number">1.10.5.</span> <span class="nav-text">7. 有哪些密钥分配的基本方法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-在用密钥枪注入密钥时，如何验证密钥注入的正确性？"><span class="nav-number">1.10.6.</span> <span class="nav-text">8. 在用密钥枪注入密钥时，如何验证密钥注入的正确性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-密钥管理为什么要将密钥划分成不同的层次？"><span class="nav-number">1.10.7.</span> <span class="nav-text">9. 密钥管理为什么要将密钥划分成不同的层次？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-一个密钥管理系统由哪几部分构成？（本题没找到）"><span class="nav-number">1.10.8.</span> <span class="nav-text">10. 一个密钥管理系统由哪几部分构成？（本题没找到）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。"><span class="nav-number">1.10.9.</span> <span class="nav-text">11. 密钥的生存期分哪四个阶段？了解密钥管理的12个工作步骤。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-查找资料，了解一个好的密钥应具备哪些数学特性？"><span class="nav-number">1.10.10.</span> <span class="nav-text">12. 查找资料，了解一个好的密钥应具备哪些数学特性？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第11章-无线网络安全"><span class="nav-number">1.11.</span> <span class="nav-text">第11章 无线网络安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。"><span class="nav-number">1.11.1.</span> <span class="nav-text">1. 无线网络面临哪些主要安全威胁？要能识别哪些是主动攻击，哪些是被动攻击。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-GSM系统有哪些主要安全缺陷？"><span class="nav-number">1.11.2.</span> <span class="nav-text">2. GSM系统有哪些主要安全缺陷？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？"><span class="nav-number">1.11.3.</span> <span class="nav-text">3. 3G系统有哪些安全功能？有哪些主要安全缺陷？与2G相比，3G作出了哪些安全性改进？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比，-4G作出了哪些安全性改进？"><span class="nav-number">1.11.4.</span> <span class="nav-text">4. 4G系统有哪些安全功能？有哪些主要安全缺陷？与3G相比， 4G作出了哪些安全性改进？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。"><span class="nav-number">1.11.5.</span> <span class="nav-text">5. 请画图分析GSM蜂窝系统保密与认证协议的工作过程，指出三元组认证向量中的每个元素所发挥的安全性作用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。"><span class="nav-number">1.11.6.</span> <span class="nav-text">6. 请画图分析3G蜂窝系统保密与认证协议的工作过程，指出五元组认证向量中的每个元素所发挥的安全性作用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-为何2G-3G-4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。"><span class="nav-number">1.11.7.</span> <span class="nav-text">7. 为何2G&#x2F;3G&#x2F;4G系统的挑战值RAND是一个随机数而不能是常数？如果挑战值RAND为常数，会产生何种安全问题？请加以分析。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-与2G-3G-4G相比，5G在哪些方面提升了安全性？"><span class="nav-number">1.11.8.</span> <span class="nav-text">8. 与2G&#x2F;3G&#x2F;4G相比，5G在哪些方面提升了安全性？</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright"> 
+&copy; 2020 &mdash; <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ranuy</span>
+
+  
+</div>
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数<i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量<i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Lbc1dgArUjhEyb6SHkHAMT4u-gzGzoHsz',
+        appKey: 'v5q6ybk4A0ffzzrJuW1FvauY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
