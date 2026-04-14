@@ -132,8 +132,9 @@ encrypt:
 #上传到github目录里面
 deploy:
   type: git
-  repo: https://github.com/php00py/php00py.github.io.git
+  repo: git@github.com:php00py/php00py.github.io.git
   branch: main
+
 
 
 
