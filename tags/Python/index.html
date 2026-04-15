@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Php00py">
-<meta property="og:url" content="https://php00py.github.io/tags/Python/index.html">
+<meta property="og:url" content="https://php00py.github.io/tags/python/index.html">
 <meta property="og:site_name" content="Php00py">
 <meta property="article:author" content="Ranuy">
 <meta property="article:tag" content="个人学习生活记录、网络安全、运维、python、php">
@@ -115,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="https://php00py.github.io/tags/Python/"/>
+  <link rel="canonical" href="https://php00py.github.io/tags/python/"/>
 
 
 
 
 
-  <title>标签: Python | Php00py</title>
+  <title>标签: python | Php00py</title>
   
 
 
@@ -285,7 +285,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>Python<small>标签</small>
+        <h2>python<small>标签</small>
         </h2>
       </div>
 
@@ -297,37 +297,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/posts/9e558de9.html" itemprop="url">
+            <a class="post-title-link" href="/posts/e72682ae.html" itemprop="url">
               
-                <span itemprop="name">suricate中的msg转化为中文的Python脚本</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-04-21T10:28:32+08:00"
-              content="2021-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/dd1b46e5.html" itemprop="url">
-              
-                <span itemprop="name">初始python函数</span>
+                <span itemprop="name">suricate规则更新脚本</span>
               
             </a>
         
@@ -335,37 +307,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2020-02-18T16:03:14+08:00"
-              content="2020-02-18" >
-          02-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/b5617bde.html" itemprop="url">
-              
-                <span itemprop="name">基于pocsuite3框架下的Struts2远程代码执行poc</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-27T14:34:18+08:00"
-              content="2019-12-27" >
-          12-27
+              datetime="2021-05-11T16:06:56+08:00"
+              content="2021-05-11" >
+          05-11
         </time>
       </div>
 
@@ -430,7 +374,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -452,7 +396,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1156,6 +1100,67 @@
             newcounter.setACL(acl);
             /* End Set ACL */
             newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
             newcounter.set("url", url);
             newcounter.set("time", 1);
             newcounter.save(null, {

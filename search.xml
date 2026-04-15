@@ -2704,4 +2704,63 @@ if __name__ == &apos;__main__&apos;:
         <tag>漏洞复现</tag>
       </tags>
   </entry>
+  <entry>
+    <title>suricate规则更新脚本</title>
+    <url>/posts/e72682ae.html</url>
+    <content><![CDATA[<h1 id="suricate规则更新脚本"><a href="#suricate规则更新脚本" class="headerlink" title="suricate规则更新脚本"></a>suricate规则更新脚本</h1><p><strong>前提</strong><br>因为工作需要，需要从规则库中去更新最新的规则内容<br><strong>思路</strong><br>将新的规则文件去和老的规则文件做对比，将新的规则内容不在老的规则文件里面视为这个是需要更新添加的规则。<br><strong>脚本</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">#更新所有规则的文件，将所有的规则合并后通过新的规则文件和老的规则文件对比，将新规则文件中不在老规则的文件内容提取出来。</span><br><span class="line">import re </span><br><span class="line">import os</span><br><span class="line">oldrule &#x3D; [] #老的规则</span><br><span class="line">newrule &#x3D;[] #新的规则</span><br><span class="line">uprules &#x3D;[]</span><br><span class="line">oldlj &#x3D; [] #老的路径</span><br><span class="line">newlj &#x3D; [] #新的路径</span><br><span class="line">def oldrules(oldrules):</span><br><span class="line">    with open(oldrules,&#39;r&#39;,encoding&#x3D;&#39;utf-8&#39;)as fa:</span><br><span class="line">        for old in fa.readlines():</span><br><span class="line">            if &quot;alert&quot; in old:</span><br><span class="line">                oldrule.append(old)</span><br><span class="line">def newrules(newrules):</span><br><span class="line">    with open(newrules,&#39;r&#39;,encoding&#x3D;&#39;utf-8&#39;)as fb:</span><br><span class="line">        for new in fb.readlines():</span><br><span class="line">            if &quot;alert&quot; in new:</span><br><span class="line">                newrule.append(new)</span><br><span class="line">def walfFile(file,name):</span><br><span class="line">    for root,dirs,files in os.walk(file):</span><br><span class="line">        for f in files:</span><br><span class="line">            allfile &#x3D; os.path.join(root,f)</span><br><span class="line">            name.append(allfile)</span><br><span class="line">oldru &#x3D; &quot;&#x2F;home&#x2F;oldrules&quot; #老的规则文件路径</span><br><span class="line">newru &#x3D; &quot;&#x2F;home&#x2F;updaterules&quot; #新的规则文件路径</span><br><span class="line">walfFile(oldru,oldlj)</span><br><span class="line">walfFile(newru,newlj)</span><br><span class="line">for oldi in oldlj:</span><br><span class="line">    oldrules(oldi)</span><br><span class="line">for newi in newlj:</span><br><span class="line">    newrules(newi)</span><br><span class="line">sum &#x3D; 0</span><br><span class="line">for i in newrule:</span><br><span class="line">    if i not in oldrule:</span><br><span class="line">        print(i)</span><br><span class="line">        sum +&#x3D; 1</span><br><span class="line">        with open(&quot;20210514.rules&quot;,&#39;a&#39;,encoding&#x3D;&#39;utf-8&#39;)as ff:</span><br><span class="line">            ff.write(i)</span><br><span class="line">print(&quot;总共更新了&#123;0&#125;规则&quot;.format(sum))</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong><br><img src="https://i-blog.csdnimg.cn/blog_migrate/d864273a35a0417ccb98190183482ad7.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>suricate</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iptables 防火墙</title>
+    <url>/posts/f71fb9ac.html</url>
+    <content><![CDATA[<h1 id="iptables防火墙"><a href="#iptables防火墙" class="headerlink" title="iptables防火墙"></a>iptables防火墙</h1><p><strong>iptables防火墙</strong><br>iptables命令 是Linux上常用的防火墙软件，位置位于/sbin/iptables，用来管理防火墙规则的工具<br><strong>iptables结构</strong><br>iptables包含四表五链。<br>默认包括4个规则表<br>• raw表：确定是否对该数据包进行状态跟踪<br>• mangle表：为数据包设置标记<br>• nat表：修改数据包中的源、目标IP地址或端口<br>• filter表：确定是否放行该数据包（过滤）<br>• 规则链<br>• 规则的作用：对数据包进行过滤或处理<br>• 链的作用：容纳各种防火墙规则<br>• 链的分类依据：处理数据包的不同时机<br>• 默认包括5种规则链<br>• INPUT：处理入站数据包<br>• OUTPUT：处理出站数据包<br>• FORWARD：处理转发数据包<br>• POSTROUTING链：在进行路由选择后处理数据包<br>• PREROUTING链：在进行路由选择前处理数据包<br><strong>iptables工作匹配流程</strong><br>规则表之间的顺序<br>• raw mangle nat filter<br>• 规则链之间的顺序<br>• 入站：PREROUTING INPUT<br>• 出站：OUTPUT POSTROUTING<br>• 转发：PREROUTING FORWARD POSTROUTING<br>• 规则链内的匹配顺序<br>• 按顺序依次检查，匹配即停止（LOG策略例外）<br>• 若找不到相匹配的规则，则按该链的默认策略处理<br><strong>iptables语法</strong><br>语法构成<br>• iptables [‐t 表名] 选项 [链名] [条件] [‐j 控制类型]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# iptables -t filter -I INPUT -p icmp -j REJECT</span><br></pre></td></tr></table></figure>
+<p>• 几个注意事项<br>• 不指定表名时，默认指filter表<br>• 不指定链名时，默认指表内的所有链<br>• 除非设置链的默认策略，否则必须指定匹配条件<br>• 选项、链名、控制类型使用大写字母，其余均为小写<br>数据包的常见控制类型<br>• ACCEPT：允许通过<br>• DROP：直接丢弃，不给出任何回应<br>• REJECT：拒绝通过，必要时会给出提示<br>• LOG：记录日志信息，然后传给下一条规则继续匹配<br><strong>iptables命令</strong><br>• 添加新的规则<br>• ‐A：在链的末尾追加一条规则<br>• ‐I：在链的开头（或指定序号）插入一条规则<br>[root@localhost ~]# iptables -t filter -A INPUT -p tcp -j ACCEPT<br>[root@localhost ~]# iptables -I INPUT -p udp -j ACCEPT<br>[root@localhost ~]# iptables -I INPUT 2 -p icmp -j ACCEPT<br>-p 用来指定协议<br>• 查看规则列表<br>• ‐L：列出所有的规则条目<br>• ‐n：以数字形式显示地址、端口等信息<br>• ‐v：以更详细的方式显示规则信息<br>• ‐‐line‐numbers：查看规则时，显示规则的序号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# iptables -L INPUT --line-numbers</span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">num target prot opt source destination</span><br><span class="line">1 ACCEPT udp -- anywhere anywhere</span><br><span class="line">2 ACCEPT icmp -- anywhere anywhere</span><br><span class="line">3 REJECT icmp -- anywhere anywhere reject-with icmp-port-</span><br><span class="line">unreachable</span><br><span class="line">4 ACCEPT tcp -- anywhere anywhere</span><br><span class="line">[root@localhost ~]# iptables -n -L INPUT</span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">target prot opt source destination</span><br><span class="line">ACCEPT udp -- 0.0.0.0&#x2F;0 0.0.0.0&#x2F;0</span><br><span class="line">ACCEPT icmp -- 0.0.0.0&#x2F;0 0.0.0.0&#x2F;0</span><br><span class="line">REJECT icmp -- 0.0.0.0&#x2F;0 0.0.0.0&#x2F;0 reject-with icmp-port-</span><br><span class="line">unreachable</span><br><span class="line">ACCEPT tcp -- 0.0.0.0&#x2F;0 0.0.0.0&#x2F;0</span><br><span class="line">-n -L 可合写为 -nL</span><br></pre></td></tr></table></figure>
+<p>置默认策略<br>• ‐P：为指定的链设置默认规则<br>[root@localhost ~]# iptables -t filter -P FORWARD DROP<br>[root@localhost ~]# iptables -P OUTPUT ACCEPT<br>默认策略要么是ACCEPT、<br>要么是DROP<br>常用管理选项汇总<br>类别 选项 用途<br>添加新的规则<br>‐A 在链的末尾追加一条规则<br>‐I 在链的开头（或指定序号）插入一条规则<br>查看规则列表<br>‐L 列出所有的规则条目<br>‐n 以数字形式显示地址、端口等信息<br>‐v 以更详细的方式显示规则信息<br>‐‐line‐numbers 查看规则时，显示规则的序号<br>删除、清空规则<br>‐D 删除链内指定序号（或内容）的一条规则<br>‐F 清空所有的规则<br>设置默认策略<br>‐P 为指定的链设置默认规则</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">类别 条件类型 用法</span><br><span class="line">通用匹配</span><br><span class="line">协议匹配 ‐p 协议名</span><br><span class="line">地址匹配 ‐s 源地址、‐d 目的地址</span><br><span class="line">接口匹配 ‐i 入站网卡、‐o 出站网卡</span><br><span class="line">隐含匹配</span><br><span class="line">端口匹配 ‐‐sport 源端口、‐‐dport 目的端口</span><br><span class="line">TCP标记匹配 ‐‐tcp‐flags 检查范围 被设置的标记</span><br><span class="line">ICMP类型匹配 ‐‐icmp‐type ICMP类型</span><br><span class="line">显式匹配</span><br><span class="line">多端口匹配 ‐m multiport ‐‐sports | ‐‐dports 端口列表</span><br><span class="line">IP范围匹配 ‐m iprange ‐‐src‐range IP范围</span><br><span class="line">MAC地址匹配 ‐m mac ‐‐mac‐source MAC地址</span><br><span class="line">状态匹配 ‐m state ‐‐state 连接状态</span><br></pre></td></tr></table></figure>
+<p><strong>备份以及还原</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">备份</span><br><span class="line">iptables-save工具进行备份</span><br><span class="line">[root@localhost ~]# iptables-save &gt; &#x2F;opt&#x2F;iprules_all.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">还原</span><br><span class="line"> iptables‐restore工具进行还原</span><br><span class="line">• 可结合重定向输入指定规则来源</span><br><span class="line">[root@localhost ~]# iptables-restore &lt; &#x2F;opt&#x2F;iprules_all.txt</span><br></pre></td></tr></table></figure>
+<p><strong>常用</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">允许源地址172.17.0.1&#x2F;16访问 目的端口为9092</span><br><span class="line">iptables -t mangle -I PREROUTING -i eth0 -s 172.17.0.1&#x2F;16 -p tcp -m multiport --dports 9092 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">禁止源地址为172.17.26.32 出站访问</span><br><span class="line">iptables -t mangle -I PREROUTING -i eth0 -s 172.17.26.32 -j DROP</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>网络知识</category>
+      </categories>
+      <tags>
+        <tag>iptables</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两台服务器ssh免密登录配置</title>
+    <url>/posts/d55ca68b.html</url>
+    <content><![CDATA[<h1 id="两台服务器ssh免密登录配置"><a href="#两台服务器ssh免密登录配置" class="headerlink" title="两台服务器ssh免密登录配置"></a>两台服务器ssh免密登录配置</h1><p><strong>前提</strong><br>因工作需要，需要配置两台服务器免密登录。<br>通过建立私秘进行免认证登录Linux服务器<br><strong>需求</strong><br>A服务器免密登录到B服务器<br><strong>服务器信息</strong><br>A服务器：192.168.139.152<br>B服务器：192.168.139.162<br><strong>配置步骤</strong></p>
+<ol>
+<li>A服务器上面生成秘钥<br><code>[root@zerotrust ~]# ssh-keygen</code><br>执行命令一路回车确认，不需要输入任何东西<img src="https://i-blog.csdnimg.cn/blog_migrate/898c6b76bcb5a472ae089facc3879bb3.png" alt="在这里插入图片描述"><br>在<code>/root/.ssh</code>下可以查看到生成的秘钥信息<br><img src="https://i-blog.csdnimg.cn/blog_migrate/0f01b02aab0bc8610d3bfa4a45211e2c.png" alt="在这里插入图片描述"></li>
+<li>将秘钥信息拷贝到服务器B上<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@zerotrust ~]# ssh-copy-id 192.168.139.162</span><br></pre></td></tr></table></figure>
+<img src="https://i-blog.csdnimg.cn/blog_migrate/3db6106bff074cb86a2678929c1cf6f8.png" alt="在这里插入图片描述">  </li>
+</ol>
+<p><strong>验证</strong><br>在A服务器上面输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@zerotrust ~]# ssh 192.168.139.162</span><br></pre></td></tr></table></figure>
+<p>即可登录服务器B，若B服务器需要免密登录到A服务器，则需要操作上述步骤。<img src="https://i-blog.csdnimg.cn/blog_migrate/89568788ee4336cc9b2f6904beadcf26.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
 </search>
